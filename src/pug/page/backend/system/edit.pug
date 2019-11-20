@@ -1,0 +1,102 @@
+extends ../../../layouts/backend-default.pug
+include ../../../mixins/admin-form-button.pug
+
+block head
+    title
+
+block content
+    form#backend-system-edit-block.backend-system-edit-block
+        .admin-backend-page-inbox
+            .admin-backend-page-inbox__left#amin-system-logo-block
+                .admin-form.event-slide
+                    .admin-form__header
+                        .header__title 網站 Logo
+                    .admin-form__content.image-upload-mode
+                        .admin-imgae-upload
+                            .imgae-upload__picture#backend-system-edit-logo-upload-image
+                            .imgae-upload__controller
+                                .imgae-upload__controller__button
+                                    input(type="file", accept=".png,.jpg,.gif").button__input#backend-system-edit-logo-upload
+                                    .button__input-style 選擇檔案
+                                input(type="text" name="backend_system_edit_logo_upload").button__input.item-image-file#backend-system-edit-logo-upload-title
+                                .imgae-upload__controller__info
+                                    .info__content  
+                                    .info__close
+                            ul.image-upload__content
+                                li.content__description 建議尺寸：520 x 100 px
+                                li.content__description 檔案限定：png、jpg、gif
+                                li.content__description 檔案大小：2mb內
+            .admin-backend-page-inbox__right#amin-system-icon-block
+                .admin-form.event-slide
+                    .admin-form__header
+                        .header__title 網站 Icon
+                    .admin-form__content.image-upload-mode
+                        .admin-imgae-upload
+                            .imgae-upload__picture#backend-system-edit-icon-upload-image
+                            .imgae-upload__controller
+                                .imgae-upload__controller__button
+                                    input(type="file", accept=".png,.ico").button__input#backend-system-edit-icon-upload
+                                    .button__input-style 選擇檔案
+                                input(type="text" name="backend_system_edit_icon_upload").button__input.item-image-file#backend-system-edit-icon-upload-title
+                                .imgae-upload__controller__info
+                                    .info__content  
+                                    .info__close
+                            ul.image-upload__content
+                                li.content__description 建議尺寸：72 x 72 px
+                                li.content__description 檔案限定：png、ico
+                                li.content__description 檔案大小：2mb內
+        .admin-backend-page-inbox
+            .admin-form.event-slide
+                .admin-form__header
+                    .header__title 網站系統 SEO 資料設定
+                .admin-form__content.input-mode
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label.required 關鍵字：
+                            .admin-input-block__content
+                                input(type="text" name="seoKeyword").admin-input-block__content__input#seoKeyword
+                                .admin-input-block__content__placeholder 須以","分隔，例如:yahoo,google
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label 網站說明：
+                            .admin-input-block__content
+                                input(type="text" name="seoContent").admin-input-block__content__input#seoContent
+                                .admin-input-block__content__placeholder description content
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label 網站名稱：
+                            .admin-input-block__content
+                                input(type="text" name="seoTitle").admin-input-block__content__input#seoTitle
+                                .admin-input-block__content__placeholder web title
+        .admin-backend-page-inbox
+            .admin-form.event-slide
+                .admin-form__header
+                    .header__title 郵件參數
+                .admin-form__content.input-mode
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label.required 客服電子郵件：
+                            .admin-input-block__content
+                                input(type="eamil" name="customerMail").admin-input-block__content__input#customerMail
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label 客服寄送名稱：
+                            .admin-input-block__content
+                                input(type="text" name="customerName").admin-input-block__content__input#customerName
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label.required 電子郵件密碼：
+                            .admin-input-block__content
+                                input(type="password" name="customerPassword").admin-input-block__content__input#customerPassword
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label 外寄郵件伺服 SSL SMTP：
+                            .admin-input-block__content
+                                input(type="text" name="customerSMTP").admin-input-block__content__input#customerSMTP
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label 外寄加密連線 SSL PORT：
+                            .admin-input-block__content
+                                input(type="text" name="customerPORT").admin-input-block__content__input#customerPORT
+        .admin-backend-page-inbox-button-wrapper
+            +adminFormButton('save','儲存')

@@ -1,0 +1,7 @@
+@mixin blockLayout($width,$padding) {
+    max-width: $width;
+    width: 100%;
+    box-sizing: border-box;
+    padding: $padding;
+    margin: 0 auto;
+}

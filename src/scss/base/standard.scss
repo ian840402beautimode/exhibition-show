@@ -1,0 +1,27 @@
+// 網站基本顏色
+$color1: #464646;  
+$color2: #444444;  
+
+// 網站基本文字大小
+$font-size1: 18px;
+$font-size2: 25px;
+
+// 網站其他文字設定
+$line-height: 1.5;
+$letter-spacing: 2px;
+
+//區塊標題
+@mixin titleStyle {
+    color: $color1;
+    font-size: $font-size2;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+//區塊敘述
+@mixin contentStyle {
+    color: $color2;
+    font-size: $font-size1;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}

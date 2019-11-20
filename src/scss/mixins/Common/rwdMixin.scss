@@ -1,0 +1,19 @@
+@mixin rwdMixin($parameter,$size1920,$size1440,$size1024,$size768,$size480) {
+    $parameter : $size1920;
+
+    @media (min-width: 1441px) {
+        $parameter : $size1920;
+    }
+    @media (min-width: 1025px) and (max-width: 1440px) {
+        $parameter : $size1440;
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+        $parameter : $size1024;
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+        $parameter : $size768;
+    }
+    @media (max-width: 480px) {
+        $parameter : $size480;
+    }
+}

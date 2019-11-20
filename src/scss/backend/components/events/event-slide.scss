@@ -1,0 +1,46 @@
+.event-slide{
+    &__header{
+        position: relative;
+        cursor: pointer;
+        transition: all .4s ease-out;
+        -webkit-transition: all .4s ease-out;
+        &:after{
+            position: absolute;
+            content: "";
+            right: 12px;
+            display: block;
+            background: url('../images/backend/arrow-right-gray.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 16px;
+            height: 15px;
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            transition: all .4s ease-out;
+            -webkit-transition: all .4s ease-out;
+        }
+    }
+    &__content{
+        display: block;
+    }
+    &.close{
+        .event-slide__header{
+            &:after{
+                background: url('../images/backend/arrow-right-gray.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                transition: all .4s ease-out;
+                -webkit-transition: all .4s ease-out;
+            }
+        }
+    }
+    &:hover{
+        .event-slide__header{
+            border-top-color: $colorMain;
+            transition: all .4s ease-out;
+            -webkit-transition: all .4s ease-out;
+        }
+    }
+}

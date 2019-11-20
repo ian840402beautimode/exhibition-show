@@ -1,0 +1,6 @@
+//- 存儲按鈕
+mixin adminFormButton(idName, content)
+    button(type="submit", id=idName).admin-form-button.save-mode=content
+//- 自訂按鈕
+mixin adminFormCustomButton(idName, content)
+    button(type="button", id=idName).admin-form-button.custom-mode=content

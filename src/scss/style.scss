@@ -1,0 +1,26 @@
+// 基本樣式 ＆ 全局樣式設定
+@import "./base/base.scss";
+@import "./base/global.scss";
+@import "./base/standard.scss";
+
+//mixins
+@import "./mixins/mixin.scss";
+
+//layout
+@import "./layout/layout.scss";
+
+//pluging
+@import "./pluging/datepicker.scss";
+@import "./pluging/datatables.scss";
+
+//components
+@import "./components/navbar.scss";
+@import "./components/slider.scss";
+@import "./components/footer.scss";
+@import "./components/banner.scss";
+
+//containers
+@import "./containers/containers.scss";
+
+//後台樣式
+@import "./backend/backend.scss";

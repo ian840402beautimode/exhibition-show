@@ -1,0 +1,222 @@
+// 此樣式基於datatables模組樣式去改寫
+.webform-list-wrapper {
+    margin-top: 30px;
+}
+
+.admin-table-style {
+    opacity: 0;
+    @include transition(.2s);
+    border: 1px solid $colorTableBroderColor !important;
+    thead {
+        tr {
+            background-color: $colorTableTop;
+            th {
+                padding: 14px 18px;
+                border-bottom: 1px solid #dedede;
+                border-right: 1px solid $colorTableOdd;
+                &:last-child {
+                    border-right: 0px;
+                }
+                &.sorting {
+                    background: unset;
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 6px;
+                        height: 12px;
+                        background: url(../images/backend/sort.png) center center no-repeat;
+                        background-size: 100%;
+                        margin-left: 5px;
+                    }
+                }
+                &.sorting_asc {
+                    background: unset;
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 6px;
+                        height: 12px;
+                        background: url(../images/backend/sort_asc.png) center center no-repeat;
+                        background-size: 100%;
+                        margin-left: 5px;
+                    }
+                }
+                &.sorting_desc {
+                    background: unset;
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 6px;
+                        height: 12px;
+                        background: url(../images/backend/sort_desc.png) center center no-repeat;
+                        background-size: 100%;
+                        margin-left: 5px;
+                    }
+                }
+                .admin-item-sort-title {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    &__button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 30px;
+                        height: 20px;
+                        margin-left: 5px;
+                        font-size: 10px;
+                        font-weight: lighter;
+                        background-color: $colorWhite;
+                        border: 1px solid #d2d2d2;
+                        border-radius: 2px;
+                        cursor: pointer;
+                        @include transition(.4s);
+                        &:hover {
+                            background-color: #efefef;
+                            @include transition(.4s);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 18px 18px;
+                text-align: center;
+                border-bottom: 0px;
+                border-right: 1px solid $colorTableOdd;
+                vertical-align: middle;
+                position: relative;
+                &:last-child {
+                    border-right: 0px;
+                }
+                span {
+                    &.hide {
+                        color: #cc2a30;
+                    }
+                }
+                .item-image{
+                    height: 50px;
+                    overflow: hidden;
+                    img {
+                        height: 100%;
+                    }
+                }
+                input[type=text].admin-item-sort {
+                    width: 20px;
+                    text-align: center;
+                }
+                &._error {
+                    &::after {
+                        content: "只能輸入數字!";
+                        font-size: 10px;
+                        color: #ff0000;
+                        position: absolute;
+                        bottom: 15px;
+                        left: 50%;
+                        margin-left: -38px;
+
+                    }
+                }
+            }
+            .item-controller {
+                display: flex;
+                justify-content: center;
+                &__delete {
+                    margin: 0px 8px;
+                    a {
+                        display: block;
+                        width: 18px;
+                        height: 18px;
+                        background: url(../images/backend/delete-icon.png) center center no-repeat;
+                        background-size: contain;
+                        @include transition(.4s);
+                        &:hover{
+                            opacity: 0.6;
+                            @include transition(.4s);
+                        }
+                    }
+                }
+                &__view {
+                    margin: 0px 8px;
+                    a {
+                        display: block;
+                        width: 18px;
+                        height: 18px;
+                        background: url(../images/backend/view-icon.png) center center no-repeat;
+                        background-size: contain;
+                        @include transition(.4s);
+                        &:hover{
+                            opacity: 0.6;
+                            @include transition(.4s);
+                        }
+                    }
+                }
+                &__edit {
+                    margin: 0px 8px;
+                    a {
+                        display: block;
+                        width: 18px;
+                        height: 18px;
+                        background: url(../images/backend/edit-icon.png) center center no-repeat;
+                        background-size: contain;
+                        @include transition(.4s);
+                        &:hover{
+                            opacity: 0.6;
+                            @include transition(.4s);
+                        }
+                    }
+                }
+            }
+            &.odd {
+                background-color: $colorTableOdd;
+            }
+            &.even {
+                background-color: $colorTableEven;
+            }
+            &:hover {
+                background-color: $colorTableHover;
+            }
+        }
+    }
+    &._show {
+        opacity: 1;
+        @include transition(.2s);
+    }
+}
+
+.admin-content {
+    .no-article {
+        margin-top: 20px;
+    }
+}
+
+.dataTables_wrapper {
+    .top-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 16px;
+        .dataTables_info {
+            font-size: $font-size-16;
+            padding: 0px;
+            span {
+                color: #ff0000;
+            }
+        }
+        .dataTables_paginate {
+            padding: 0px;
+            margin-left: 18px;
+            select {
+                display: block;
+                width: 65px;
+                height: 25px;
+                font-size: $font-size-16;
+                background-color: #f9f9f9;
+                border: 1px solid #ececec;
+            }
+        }
+    }
+}

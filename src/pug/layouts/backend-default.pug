@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        include ./../components/backend/head.pug
+        block head
+        
+    body.admin-backend-page
+        header#admin-header.admin-header
+            include ./../components/backend/header.pug
+        
+        main
+            aside#admin-sidebar.admin-sidebar
+                include ./../components/backend/sidebar.pug
+            article#admin-content.admin-content
+                block content

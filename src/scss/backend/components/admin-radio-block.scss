@@ -1,0 +1,40 @@
+.admin-radio-block{
+    display: flex;
+    align-items: flex-start;
+    &.show{
+        .admin-input-block__content .admin-input-block__content__item{
+            .item__label{
+                color: $colorSecond;
+            }
+            .item__radio{
+                pointer-events: visible;
+                opacity: 1;
+            }
+        }
+    }
+    .admin-radio-block__label{
+        width: 217px;
+        display: block;
+        color: $colorSecond;
+        font-size: $font-size-16;
+        margin-top: 2px;
+    }
+    .admin-input-block__content{
+        width: calc(100% - 217px);
+        display: flex;
+        align-items: center;
+        .admin-input-block__content__item{
+            margin-right: 24px;
+            .item__label{
+                color: $colorDashed;
+                font-size: $font-size-16;
+            }
+            .item__radio{
+                width: 16px;
+                height: 16px;
+                pointer-events:none;
+                opacity:0.2;
+            }
+        }
+    }
+}

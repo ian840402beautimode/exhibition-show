@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+    head
+        include ../../../components/backend/head.pug
+        title 後台登入
+    body
+        main
+            #login-block.login-block
+                .login-block__inbox
+                    img(src="../images/backend/logo-orange.png",alt="fsource-logo",title="fsource-logo").inbox__logo
+                    .inbox__title Welcome To Admin Panel
+                    form.inbox__content#item-login-form
+                        .input-block.item-input-block
+                            .input-block__header
+                                img(src="../images/backend/account-gray.png",alt="account-gray",title="account-gray").input-block__header__icon
+                                input(type="email", name="email", id="email").input-block__header__input
+                            .input-block__placeholder.item-error Please enter your valid email address.
+                        .input-block.item-input-block
+                            .input-block__header
+                                img(src="../images/backend/password-gray.png",alt="password-gray",title="password-gray").input-block__header__icon
+                                input(type="password", name="password", id="password").input-block__header__input
+                            .input-block__placeholder.item-error Please enter your valid email password.
+                        //- H o n e y p o t
+                        .input-block.ohnohoney
+                            .input-block__header
+                                img(src="../images/backend/account-gray.png",alt="account-gray",title="account-gray").input-block__header__icon
+                                input(type="email", autocomplete="off", name="ohnohoney-email", id="ohnohoney-email").input-block__header__input
+                            .input-block__placeholder Please enter your valid email address.
+                        .input-block.ohnohoney
+                            .input-block__header
+                                img(src="../images/backend/password-gray.png",alt="password-gray",title="password-gray").input-block__header__icon
+                                input(type="password", autocomplete="off", name="ohnohoney-password", id="ohnohoney-password").input-block__header__input
+                            .input-block__placeholder Please enter your valid email password.
+                        button(type="submit").submit-button
+                            .submit-button__link.item-login-button Login
+                            
+
+    
+                    
+                
+            
+
+    

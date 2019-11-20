@@ -1,0 +1,19 @@
+include ../../../mixins/block_title.pug
+
+#index-service-block
+    .service
+        .service__title
+            +blockTitle('item-service-title')
+        ul.service__list.item-template-list
+            li.service__list__single.item-template
+                .single__block.item-template-image
+                    .single__content
+                        img(src="/").single__content__image.item-template-icon
+                        p.single__content__title.item-template-title 
+                        p.single__contnet__description.item-template-content 
+                        .single__content__button
+                            a(href="#", target="_blank").item-template-link
+                                p.button__title Read More
+            
+            
+            

@@ -1,0 +1,646 @@
+extends ../../../layouts/backend-default.pug
+include ../../../mixins/admin-form-button.pug
+
+block head
+    title
+block content
+    form#backend-index-edit-block.backend-index-edit-block
+        .admin-backend-page-inbox
+            .admin-form.event-slide
+                .admin-form__header
+                    .header__title 橫幅腰帶管理
+                .admin-form__content.input-mode
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_title").admin-input-block__content__input#index-edit-title
+                    .admin-form__content__item-block
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 內文：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_content").admin-textarea-block__content__textarea#index-edit-content
+                    .admin-form__content__item-block#index-edit-item1
+                        .admin-form__content__title 說明1
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_item1_title").admin-input-block__content__input.event-item-value#index-edit-item1-title
+                        .admin-form__content__item-padding
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 輔助文字：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_item1_content").admin-textarea-block__content__textarea.event-item-value#index-edit-item1-content
+                        .admin-form__content__item-padding
+                        .admin-image-block
+                            label.admin-image-block__label 圖片：
+                            .admin-image-block__content
+                                .admin-imgae-upload
+                                    .imgae-upload__picture#index-edit-item1-icon-upload-image
+                                    .imgae-upload__controller
+                                        .imgae-upload__controller__button
+                                            input(type="file",  accept=".png,.ico").button__input.event-item-value#index-edit-item1-icon-upload
+                                            .button__input-style 選擇檔案
+                                        input(type="text" name="index_edit_item1_icon_upload").button__input.item-image-file#index-edit-item1-icon-upload-title
+                                        .imgae-upload__controller__info
+                                            .info__content  
+                                            .info__close
+                                    ul.image-upload__content
+                                        li.content__description 建議尺寸：132 x 108 px
+                                        li.content__description 檔案限定：png、ico
+                                        li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index_edit_item1" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index_edit_item1" value=0 checked).item__radio
+                                    label.item__label 隱藏
+                    .admin-form__content__item-block#index-edit-item2
+                        .admin-form__content__title 說明2
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_item2_title").admin-input-block__content__input.event-item-value#index-edit-item2-title
+                        .admin-form__content__item-padding
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 輔助文字：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_item2_content").admin-textarea-block__content__textarea.event-item-value#index-edit-item2-content
+                        .admin-form__content__item-padding
+                        .admin-image-block
+                            label.admin-image-block__label 圖片：
+                            .admin-image-block__content
+                                .admin-imgae-upload
+                                    .imgae-upload__picture#index-edit-item2-icon-upload-image
+                                    .imgae-upload__controller
+                                        .imgae-upload__controller__button
+                                            input(type="file" ,accept=".png,.ico").button__input.event-item-value#index-edit-item2-icon-upload
+                                            .button__input-style 選擇檔案
+                                        input(type="text" name="index_edit_item2_icon_upload").button__input.item-image-file#index-edit-item2-icon-upload-title
+                                        .imgae-upload__controller__info
+                                            .info__content  
+                                            .info__close
+                                    ul.image-upload__content
+                                        li.content__description 建議尺寸：132 x 108 px
+                                        li.content__description 檔案限定：png、ico
+                                        li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index_edit_item2" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index_edit_item2" value=0 checked).item__radio
+                                    label.item__label 隱藏   
+                    .admin-form__content__item-block#index-edit-item3
+                        .admin-form__content__title 說明3
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_item3_title").admin-input-block__content__input.event-item-value#index-edit-item3-title
+                        .admin-form__content__item-padding
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 輔助文字：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_item3_content").admin-textarea-block__content__textarea.event-item-value#index-edit-item3-content
+                        .admin-form__content__item-padding
+                        .admin-image-block
+                            label.admin-image-block__label 圖片：
+                            .admin-image-block__content
+                                .admin-imgae-upload
+                                    .imgae-upload__picture#index-edit-item3-icon-upload-image
+                                    .imgae-upload__controller
+                                        .imgae-upload__controller__button
+                                            input(type="file", accept=".png,.ico").button__input.event-item-value#index-edit-item3-icon-upload
+                                            .button__input-style 選擇檔案
+                                        input(type="text" name="index_edit_item3_icon_upload").button__input.item-image-file#index-edit-item3-icon-upload-title
+                                        .imgae-upload__controller__info
+                                            .info__content  
+                                            .info__close
+                                    ul.image-upload__content
+                                        li.content__description 建議尺寸：132 x 108 px
+                                        li.content__description 檔案限定：png、ico
+                                        li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index_edit_item3" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index_edit_item3" value=0 checked).item__radio
+                                    label.item__label 隱藏 
+        .admin-backend-page-inbox
+            .admin-form.event-slide
+                .admin-form__header
+                    .header__title 關於我們管理
+                .admin-form__content.input-mode#index-edit-about
+                    .admin-form__content__item-block
+                        .admin-image-block-segmentation
+                            .admin-image-block-segmentation__box
+                                .admin-image-block#index-edit-about-picture1-block
+                                    label.admin-image-block__label 圖片1：
+                                    .admin-image-block__content
+                                        .admin-imgae-upload.row-mode
+                                            .imgae-upload__picture#index-edit-about-picture1-upload-image
+                                            .imgae-upload__controller
+                                                .imgae-upload__controller__button
+                                                    input(type="file",  accept=".png,.jpg,.gif").button__input#index-edit-about-picture1-upload
+                                                    .button__input-style 選擇檔案
+                                                input(type="text" name="index_edit_about_picture1_upload").button__input.item-image-file#index-edit-about-picture1-upload-title
+                                                .imgae-upload__controller__info
+                                                    .info__content  
+                                                    .info__close
+                                            ul.image-upload__content
+                                                li.content__description 建議尺寸：460 x 330 px
+                                                li.content__description 檔案限定：png、jpg、gif
+                                                li.content__description 檔案大小：2mb內
+                            .admin-image-block-segmentation__box
+                                .admin-image-block#index-edit-about-picture2-block
+                                    label.admin-image-block__label 圖片2：
+                                    .admin-image-block__content
+                                        .admin-imgae-upload.row-mode
+                                            .imgae-upload__picture#index-edit-about-picture2-upload-image
+                                            .imgae-upload__controller
+                                                .imgae-upload__controller__button
+                                                    input(type="file",  accept=".png,.jpg,.gif").button__input#index-edit-about-picture2-upload
+                                                    .button__input-style 選擇檔案
+                                                input(type="text" name="index_edit_about_picture2_upload").button__input.item-image-file#index-edit-about-picture2-upload-title
+                                                .imgae-upload__controller__info
+                                                    .info__content  
+                                                    .info__close
+                                            ul.image-upload__content
+                                                li.content__description 建議尺寸：460 x 330 px
+                                                li.content__description 檔案限定：png、jpg、gif
+                                                li.content__description 檔案大小：2mb內
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_about_title").admin-input-block__content__input#index-edit-about-title
+                    .admin-form__content__item-block
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 內文：
+                            .admin-textarea-block__content
+                                textarea(name="indexeditaboutcontent").admin-textarea-block__content__textarea.height260px#indexeditaboutcontent
+        .admin-backend-page-inbox
+            .admin-form.event-slide
+                .admin-form__header
+                    .header__title 服務項目管理
+                .admin-form__content.input-mode
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_servive_title").admin-input-block__content__input#index-edit-service-title
+                    .admin-form__content__item-block#index-edit-service-item1
+                        .admin-form__content__title 服務項目1
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_service_item1_title").admin-input-block__content__input.event-item-value#index-edit-service-item1-title
+                        .admin-form__content__item-padding
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 輔助文字：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_service_item1_content").admin-textarea-block__content__textarea.event-item-value#index-edit-service-item1-content
+                        .admin-form__content__item-padding
+                            .admin-image-block#index-edit-service-item1-icon1-block
+                                label.admin-image-block__label icon(白)：
+                                .admin-image-block__content
+                                    .admin-imgae-upload
+                                        .imgae-upload__picture#index-edit-service-item1-icon1-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file", accept=".png,.ico").button__input.event-item-value#index-edit-service-item1-icon1-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_service_item1_icon1_upload").button__input.item-image-file#index-edit-service-item1-icon1-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：106 x 100 px
+                                            li.content__description 檔案限定：png、ico
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                            .admin-image-block#index-edit-service-item1-picture-block
+                                label.admin-image-block__label 圖片：
+                                .admin-image-block__content
+                                    .admin-imgae-upload.row-mode
+                                        .imgae-upload__picture#index-edit-service-item1-picture-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file", accept=".png,.jpg,.gif").button__input.event-item-value#index-edit-service-item1-picture-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_service_item1_picture_upload").button__input.item-image-file#index-edit-service-item1-picture-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：335 x 358 px
+                                            li.content__description 檔案限定：png、jpg、gif
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                            .admin-input-block
+                                label.admin-input-block__label 圖片連結：
+                                .admin-input-block__content
+                                    input(type="text" name="index_edit_service_item1_link").admin-input-block__content__input.event-item-value#index-edit-service-item1-link
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-service-item1" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-service-item1" value=0 checked).item__radio
+                                    label.item__label 隱藏
+                    .admin-form__content__item-block#index-edit-service-item2
+                        .admin-form__content__title 服務項目2
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_service_item2_title").admin-input-block__content__input.event-item-value#index-edit-service-item2-title
+                        .admin-form__content__item-padding
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 輔助文字：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_service_item2_content").admin-textarea-block__content__textarea.event-item-value#index-edit-service-item2-content
+                        .admin-form__content__item-padding
+                            .admin-image-block#index-edit-service-item2-icon1-block
+                                label.admin-image-block__label icon(白)：
+                                .admin-image-block__content
+                                    .admin-imgae-upload
+                                        .imgae-upload__picture#index-edit-service-item2-icon1-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file", accept=".png,.ico").button__input.event-item-value#index-edit-service-item2-icon1-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_service_item2_icon1_upload").button__input.item-image-file#index-edit-service-item2-icon1-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：106 x 100 px
+                                            li.content__description 檔案限定：png、ico
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                            .admin-image-block#index-edit-service-item2-picture-block
+                                label.admin-image-block__label 圖片：
+                                .admin-image-block__content
+                                    .admin-imgae-upload.row-mode
+                                        .imgae-upload__picture#index-edit-service-item2-picture-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file", accept=".png,.jpg,.gif").button__input.event-item-value#index-edit-service-item2-picture-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_service_item2_picture_upload").button__input.item-image-file#index-edit-service-item2-picture-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：335 x 358 px
+                                            li.content__description 檔案限定：png、jpg、gif
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                            .admin-input-block
+                                label.admin-input-block__label 圖片連結：
+                                .admin-input-block__content
+                                    input(type="text" name="index_edit_service_item2_link").admin-input-block__content__input.event-item-value#index-edit-service-item2-link
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-service-item2" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-service-item2" value=0 checked).item__radio
+                                    label.item__label 隱藏
+                    .admin-form__content__item-block#index-edit-service-item3
+                        .admin-form__content__title 服務項目3
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_service_item3_title").admin-input-block__content__input.event-item-value#index-edit-service-item3-title
+                        .admin-form__content__item-padding
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 輔助文字：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_service_item3_content").admin-textarea-block__content__textarea.event-item-value#index-edit-service-item3-content
+                        .admin-form__content__item-padding
+                            .admin-image-block#index-edit-service-item3-icon1-block
+                                label.admin-image-block__label icon(白)：
+                                .admin-image-block__content
+                                    .admin-imgae-upload
+                                        .imgae-upload__picture#index-edit-service-item3-icon1-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file", accept=".png,.ico").button__input.event-item-value#index-edit-service-item3-icon1-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_service_item3_icon1_upload").button__input.item-image-file#index-edit-service-item3-icon1-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：106 x 100 px
+                                            li.content__description 檔案限定：png、ico
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                            .admin-image-block#index-edit-service-item3-picture-block
+                                label.admin-image-block__label 圖片：
+                                .admin-image-block__content
+                                    .admin-imgae-upload.row-mode
+                                        .imgae-upload__picture#index-edit-service-item3-picture-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file", accept=".png,.jpg,.gif").button__input.event-item-value#index-edit-service-item3-picture-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_service_item3_picture_upload").button__input.item-image-file#index-edit-service-item3-picture-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：335 x 358 px
+                                            li.content__description 檔案限定：png、jpg、gif
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                            .admin-input-block
+                                label.admin-input-block__label 圖片連結：
+                                .admin-input-block__content
+                                    input(type="text" name="index_edit_service_item3_link").admin-input-block__content__input.event-item-value#index-edit-service-item3-link
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-service-item3" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-service-item3" value=0 checked).item__radio
+                                    label.item__label 隱藏
+                    .admin-form__content__item-block#index-edit-service-item4
+                        .admin-form__content__title 服務項目4
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_service_item4_title").admin-input-block__content__input.event-item-value#index-edit-service-item4-title
+                        .admin-form__content__item-padding
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 輔助文字：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_service_item4_content").admin-textarea-block__content__textarea.event-item-value#index-edit-service-item4-content
+                        .admin-form__content__item-padding
+                            .admin-image-block#index-edit-service-item4-icon1-block
+                                label.admin-image-block__label icon(白)：
+                                .admin-image-block__content
+                                    .admin-imgae-upload
+                                        .imgae-upload__picture#index-edit-service-item4-icon1-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file", accept=".png,.ico").button__input.event-item-value#index-edit-service-item4-icon1-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_service_item4_icon1_upload").button__input.item-image-file#index-edit-service-item4-icon1-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：106 x 100 px
+                                            li.content__description 檔案限定：png、ico
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                            .admin-image-block#index-edit-service-item4-picture-block
+                                label.admin-image-block__label 圖片：
+                                .admin-image-block__content
+                                    .admin-imgae-upload.row-mode
+                                        .imgae-upload__picture#index-edit-service-item4-picture-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file", accept=".png,.jpg,.gif").button__input.event-item-value#index-edit-service-item4-picture-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_service_item4_picture_upload").button__input.item-image-file#index-edit-service-item4-picture-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：335 x 358 px
+                                            li.content__description 檔案限定：png、jpg、gif
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                            .admin-input-block
+                                label.admin-input-block__label 圖片連結：
+                                .admin-input-block__content
+                                    input(type="text" name="index_edit_service_item4_link").admin-input-block__content__input.event-item-value#index-edit-service-item4-link
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-service-item4" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-service-item4" value=0 checked).item__radio
+                                    label.item__label 隱藏
+        .admin-backend-page-inbox
+            .admin-form.event-slide
+                .admin-form__header
+                    .header__title 工廠介紹管理
+                .admin-form__content.input-mode
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_factory_title").admin-input-block__content__input#index-edit-factory-title
+                    .admin-form__content__item-block
+                        .admin-input-block
+                            label.admin-input-block__label.required 副標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_factory_subtitle").admin-input-block__content__input#index-edit-factory-subtitle
+                    .admin-form__content__item-block
+                        .admin-textarea-block
+                            label.admin-textarea-block__label 內文：
+                            .admin-textarea-block__content
+                                textarea(name="index_edit_factory_content").admin-textarea-block__content__textarea.height260px#index-edit-factory-content
+                    .admin-form__content__item-block#index-edit-factory-main-picture
+                        .admin-image-block
+                            label.admin-image-block__label 圖片：
+                            .admin-image-block__content
+                                .admin-imgae-upload.row-mode
+                                    .imgae-upload__picture#index-edit-factory-main-picture-upload-image
+                                    .imgae-upload__controller
+                                        .imgae-upload__controller__button
+                                            input(type="file" , accept=".png,.jpg,.gif").button__input.event-item-value#index-edit-factory-main-picture-upload
+                                            .button__input-style 選擇檔案
+                                        input(type="text" name="index_edit_factory_main_picture_upload").button__input.item-image-file#index-edit-factory-main-picture-upload-title
+                                        .imgae-upload__controller__info
+                                            .info__content  
+                                            .info__close
+                                    ul.image-upload__content
+                                        li.content__description 建議尺寸：714 x 467 px
+                                        li.content__description 檔案限定：png、jpg、gif
+                                        li.content__description 檔案大小：2mb內
+                    .admin-form__content__item-block#index-edit-factory-item1
+                        .admin-form__content__title 說明1
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_factory_item1_title").admin-input-block__content__input.event-item-value#index-edit-factory-item1-title
+                        .admin-form__content__item-padding
+                            .admin-textarea-block
+                                label.admin-textarea-block__label 輔助文字：
+                                .admin-textarea-block__content
+                                    textarea(name="index_edit_factory_item1_content").admin-textarea-block__content__textarea.event-item-value#index-edit-factory-item1-content
+                        .admin-form__content__item-padding
+                            .admin-image-block
+                                label.admin-image-block__label 圖片：
+                                .admin-image-block__content
+                                    .admin-imgae-upload.row-mode
+                                        .imgae-upload__picture#index-edit-factory-item1-picture-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file" , accept=".png,.ico").button__input.event-item-value#index-edit-factory-item1-picture-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_factory_item1_picture_upload").button__input.item-image-file#index-edit-factory-item1-picture-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：80 x 84 px
+                                            li.content__description 檔案限定：png、ico
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-factory-item1" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-factory-item1" value=0 checked).item__radio
+                                    label.item__label 隱藏
+                    .admin-form__content__item-block#index-edit-factory-item2
+                        .admin-form__content__title 說明2
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_factory_item2_title").admin-input-block__content__input.event-item-value#index-edit-factory-item2-title
+                        .admin-form__content__item-padding
+                            .admin-textarea-block
+                                label.admin-textarea-block__label 輔助文字：
+                                .admin-textarea-block__content
+                                    textarea(name="index_edit_factory_item2_content").admin-textarea-block__content__textarea.event-item-value#index-edit-factory-item2-content
+                        .admin-form__content__item-padding
+                            .admin-image-block
+                                label.admin-image-block__label 圖片：
+                                .admin-image-block__content
+                                    .admin-imgae-upload.row-mode
+                                        .imgae-upload__picture#index-edit-factory-item2-picture-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file" , accept=".png,.ico").button__input.event-item-value#index-edit-factory-item2-picture-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_factory_item2_picture_upload").button__input.item-image-file#index-edit-factory-item2-picture-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：80 x 84 px
+                                            li.content__description 檔案限定：png、ico
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-factory-item2" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-factory-item2" value=0 checked).item__radio
+                                    label.item__label 隱藏
+                    .admin-form__content__item-block#index-edit-factory-item3
+                        .admin-form__content__title 說明3
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_factory_item3_title").admin-input-block__content__input.event-item-value#index-edit-factory-item3-title
+                        .admin-form__content__item-padding
+                            .admin-textarea-block
+                                label.admin-textarea-block__label 輔助文字：
+                                .admin-textarea-block__content
+                                    textarea(name="index_edit_factory_item3_content").admin-textarea-block__content__textarea.event-item-value#index-edit-factory-item3-content
+                        .admin-form__content__item-padding
+                            .admin-image-block
+                                label.admin-image-block__label 圖片：
+                                .admin-image-block__content
+                                    .admin-imgae-upload.row-mode
+                                        .imgae-upload__picture#index-edit-factory-item3-picture-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file" , accept=".png,.ico").button__input.event-item-value#index-edit-factory-item3-picture-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_factory_item3_picture_upload").button__input.item-image-file#index-edit-factory-item3-picture-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：80 x 84 px
+                                            li.content__description 檔案限定：png、ico
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-factory-item3" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-factory-item3" value=0 checked).item__radio
+                                    label.item__label 隱藏  
+                    .admin-form__content__item-block#index-edit-factory-item4
+                        .admin-form__content__title 說明4
+                        .admin-input-block
+                            label.admin-input-block__label.required 標題：
+                            .admin-input-block__content
+                                input(type="text" name="index_edit_factory_item4_title").admin-input-block__content__input.event-item-value#index-edit-factory-item4-title
+                        .admin-form__content__item-padding
+                            .admin-textarea-block
+                                label.admin-textarea-block__label 輔助文字：
+                                .admin-textarea-block__content
+                                    textarea(name="index_edit_factory_item4_content").admin-textarea-block__content__textarea.event-item-value#index-edit-factory-item4-content
+                        .admin-form__content__item-padding
+                            .admin-image-block
+                                label.admin-image-block__label 圖片：
+                                .admin-image-block__content
+                                    .admin-imgae-upload.row-mode
+                                        .imgae-upload__picture#index-edit-factory-item4-picture-upload-image
+                                        .imgae-upload__controller
+                                            .imgae-upload__controller__button
+                                                input(type="file" , accept=".png,.ico").button__input.event-item-value#index-edit-factory-item4-picture-upload
+                                                .button__input-style 選擇檔案
+                                            input(type="text" name="index_edit_factory_item4_picture_upload").button__input.item-image-file#index-edit-factory-item4-picture-upload-title
+                                            .imgae-upload__controller__info
+                                                .info__content  
+                                                .info__close
+                                        ul.image-upload__content
+                                            li.content__description 建議尺寸：80 x 84 px
+                                            li.content__description 檔案限定：png、ico
+                                            li.content__description 檔案大小：2mb內
+                        .admin-form__content__item-padding
+                        .admin-radio-block
+                            label.admin-radio-block__label 前台顯示：
+                            .admin-input-block__content
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-factory-item4" value=1).item__radio
+                                    label.item__label 顯示
+                                .admin-input-block__content__item
+                                    input(type="radio" name="index-edit-factory-item4" value=0 checked).item__radio
+                                    label.item__label 隱藏
+        .admin-backend-page-inbox-button-wrapper
+            +adminFormButton('save','儲存')

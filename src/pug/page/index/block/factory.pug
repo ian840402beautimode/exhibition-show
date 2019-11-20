@@ -1,0 +1,16 @@
+include ../../../mixins/block_title.pug
+
+#index-factory-block.index-factory-block
+    .factory__image
+    .factory__content
+        .factory__content__title
+            +blockTitle('item-factory-title')
+        .factory__content__subtitle.item-factory-subtitle
+        .factory__content__des.item-factory-des
+        ul.factory__content__list.item-factory-list
+            li.list__single.item-factory-template
+                .list__single__image
+                    img(src="/").image__content.item-factory-template-image
+                .list__single__content
+                    .content__title.item-factory-template-title
+                    .content__des.item-factory-template-des

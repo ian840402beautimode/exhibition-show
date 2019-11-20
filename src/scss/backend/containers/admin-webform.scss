@@ -1,0 +1,32 @@
+.admin-contact-webform-result-block {
+    .webform-content {
+        padding: 9px 24px 24px 24px;
+        box-sizing: border-box;
+        &__row {
+            display: flex;
+            padding: 15px 0px;
+            border-bottom: 1px dashed #dddddd;
+            &:last-child {
+                border-bottom: 0px;
+            }
+            &.top-row {
+                justify-content: space-between;
+            }
+            &.middle-row {
+                .webform-content__row__item {
+                    padding-right: 24px;
+                    border-right: 1px solid #dddddd;
+                    margin-right: 24px;
+                }
+            }
+            &__item {
+                display: flex;
+                font-size: $font-size-16;
+            }
+        }
+    }
+    .admin-webform-pager {
+        display: flex;
+        margin-top: 20px;
+    }
+}

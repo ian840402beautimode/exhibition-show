@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+    head
+        include ./../components/head.pug
+        block head
+        
+    body
+        header#header.header
+            include ./../components/navbar.pug            
+        
+        main
+            block banner
+            block content
+
+        footer#footer.footer
+            include ./../components/footer.pug
+        
