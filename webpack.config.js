@@ -57,9 +57,9 @@ module.exports = {
         {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            publicPath: "../",
-            use: ['css-loader', 'sass-loader']
+                fallback: 'style-loader',
+                publicPath: "../",
+                use: ['css-loader', 'sass-loader']
             })
         },
         {
@@ -69,11 +69,21 @@ module.exports = {
         {
             test: /\.(gif|png|jpe?g|svg)$/i,
             use: {
-            loader: 'url-loader',
-            options: { 
-                name: "[path][name].[ext]",
-                context: "src",     // 處理圖片巢狀資料夾結構
-                limit: 1024
+                loader: 'url-loader',
+                options: { 
+                    name: "[path][name].[ext]",
+                    context: "src",     // 處理圖片巢狀資料夾結構
+                    limit: 1024
+                }
+            }
+        },
+        {
+            test: /\.(woff|woff2|ttc|ttf|otf)$/i,
+            use: {
+                loader: 'url-loader',
+                options: { 
+                    name: "fonts/[name].[ext]",
+                    limit: 1024
                 }
             }
         },
