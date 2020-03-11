@@ -1,16 +1,16 @@
 doctype html
 html(lang="en")
     head
-        include ./../components/backend/head.pug
+        include ../components/head.pug
         block head
         
     body.admin-backend-page
         header#admin-header.admin-header
-            include ./../components/backend/header.pug
+            include ../components/header.pug
         
         main
             aside#admin-sidebar.admin-sidebar
-                include ./../components/backend/sidebar.pug
+                include ../components/sidebar.pug
             article#admin-content.admin-content
                 block content
                 .page-placeholder-text 僅支援 Chrome 瀏覽器，最小寬度 1024px。

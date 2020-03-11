@@ -32,13 +32,13 @@ module.exports = {
         ]
     },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'js/[name].js',
     // publicPath: '../../../../',            // 打包正式環境時使用
   },
   mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'public'),
     port: 8080,
     open: true,
   },

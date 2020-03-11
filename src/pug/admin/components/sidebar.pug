@@ -1,0 +1,318 @@
+include ../mixins/menuItem.pug
+
+-
+  var sidebarMenuItem = {
+      1:{
+          title: "資料更新管理",
+          item: {
+              1:{
+                title: "資料更新管理",
+                link: "/admin/data/index"
+              },
+              2:{
+                title: "手動資料更新列表",
+                link: "/admin/data/manual"
+              },
+              3:{
+                title: "會員自動更新列表",
+                link: "/admin/data/member"
+              },
+              4:{
+                title: "訂單自動更新列表",
+                link: "/admin/data/order"
+              }
+          }
+      },
+      2:{
+          title: "產品線管理",
+          item: {
+              1:{
+                title: "產品類別管理",
+                link: "/admin/product/category"
+              },
+              2:{
+                title: "產品系列管理",
+                link: "/admin/product/series"
+              },
+              3:{
+                title: "產品管理",
+                link: "/admin/product/commodity"
+              },
+              4:{
+                title: "Excel 檔上傳",
+                link: "/admin/product/upload"
+              }
+          }
+      },
+      3:{
+          title: "會員管理",
+          item: {
+              1:{
+                title: "會員列表",
+                link: "/admin/member/list"
+              },
+              2:{
+                title: "會員訊息管理",
+                link: "/admin/member/message"
+              },
+              3:{
+                title: "Excel 檔上傳",
+                link: "/admin/member/upload"
+              }
+          }
+      },
+      4:{
+          title: "訂單管理",
+          item: {
+              1:{
+                title: "訂單總覽",
+                link: "/admin/order/index"
+              },
+              2:{
+                title: "已訂購未付款",
+                link: "/admin/order/waitpay"
+              },
+              3:{
+                title: "已付款未出貨",
+                link: "/admin/order/waitship"
+              },
+              4:{
+                title: "已出貨",
+                link: "/admin/order/ship"
+              },
+              5:{
+                title: "已退貨",
+                link: "/admin/order/returns"
+              },
+              6:{
+                title: "取消訂單",
+                link: "/admin/order/cancel"
+              },
+              7:{
+                title: "活動取消訂單",
+                link: "/admin/order/activity-cancel"
+              },
+              8:{
+                title: "報表匯出",
+                link: "/admin/order/excel"
+              }
+          }
+      },
+      5:{
+          title: "購物流程管理",
+          item: {
+              1:{
+                title: "Step1 業績地區管理",
+                link: "/admin/shopping-process/performance"
+              },
+              2:{
+                title: "Step1 營業所取貨管理",
+                link: "/admin/shopping-process/office"
+              },
+              3:{
+                title: "Step1 配送方式管理",
+                link: "/admin/shopping-process/delivery"
+              },
+              4:{
+                title: "Step2 愛心碼管理",
+                link: "/admin/shopping-process/charity"
+              },
+              5:{
+                title: "Step3 付款方式管理",
+                link: "/admin/shopping-process/payment"
+              },
+              6:{
+                title: "Step3 匯款日期管理",
+                link: "/admin/shopping-process/remittance"
+              },
+              7:{
+                title: "Step4 運費管理",
+                link: "/admin/shopping-process/freight"
+              },
+              8:{
+                title: "Step4 購物條款管理",
+                link: "/admin/shopping-process/terms"
+              },
+              9:{
+                title: "結業積日管理",
+                link: "/admin/shopping-process/close"
+              },
+              10:{
+                title: "續約日期管理",
+                link: "/admin/shopping-process/renew"
+              }
+          }
+      },
+      6:{
+          title: "購物活動管理",
+          item: {
+              1:{
+                title: "五行商品設定",
+                link: "#"
+              },
+              2:{
+                title: "活動管理",
+                link: "#"
+              },
+              3:{
+                title: "序號活動管理",
+                link: "#"
+              },
+              4:{
+                title: "摸彩活動管理",
+                link: "#"
+              }
+          }
+      },
+      7:{
+          title: "關於我們管理",
+          item: {
+            1: {
+              title: "內容管理",
+              link: "/admin/about"
+            }
+          }
+      },
+      8:{
+          title: "加入東震管理",
+          item: {
+              1:{
+                title: "第一層列表管理",
+                link: "/admin/join/first"
+              },
+              2:{
+                title: "第二層列表管理",
+                link: "/admin/join/second"
+              },
+              3:{
+                title: "第三層列表管理",
+                link: "/admin/join/third"
+              }
+          }
+      },
+      9:{
+          title: "東震之聲管理",
+          item: {
+              1:{
+                title: "總經理專欄",
+                link: "/admin/sound/rubric"
+              },
+              2:{
+                title: "行政事項公告",
+                link: "/admin/sound/matter"
+              },
+              3:{
+                title: "行事曆",
+                link: "/admin/sound/calendar"
+              },
+              4:{
+                title: "最新消息",
+                link: "/admin/sound/news"
+              },
+              5:{
+                title: "旅遊資訊",
+                link: "/admin/sound/travel"
+              },
+          }
+      },
+      10:{
+          title: "客服中心管理",
+          item: {
+              1:{
+                title: "聯絡我們管理",
+                link: "/admin/service/contact"
+              },
+              2:{
+                title: "全國通訊錄管理",
+                link: "/admin/service/stronghold"
+              },
+              3:{
+                title: "客服中心類別管理",
+                link: "/admin/service/class-list"
+              },
+              4:{
+                title: "客服中心管理",
+                link: "/admin/service/class-content-list"
+              }
+          }
+      },
+      11:{
+          title: "首頁管理",
+          item: {
+              1:{
+                title: "APP 首頁管理",
+                link: "/admin/index/app/edit"
+              },
+              2:{
+                title: "輪播圖片管理",
+                link: "/admin/index/banner"
+              },
+              3:{
+                title: "跑馬燈管理",
+                link: "/admin/index/ad"
+              },
+              4:{
+                title: "詐騙資訊管理",
+                link: "/admin/index/scam/edit"
+              },
+              5:{
+                title: "業績與業績信箱管理",
+                link: "/admin/index/performance/edit"
+              },
+              6:{
+                title: "每日時局",
+                link: "/admin/index/hour"
+              }
+          }
+      },
+      12:{
+          title: "資源管理",
+          item: {
+              1:{
+                title: "影片上傳",
+                link: "/admin/resources/video"
+              }
+          }
+      },
+      13:{
+          title: "網站系統管理",
+          item: {
+              1:{
+                title: "登入訊息管理",
+                link: "/admin/system/login-message"
+              },
+              2:{
+                title: "購物功能開關",
+                link: "/admin/system/shopping"
+              },
+              3:{
+                title: "全站開關",
+                link: "/admin/system/ip"
+              },
+              4:{
+                title: "網站資訊管理",
+                link: "/admin/system/information"
+              },
+              5:{
+                title: "郵件參數開關",
+                link: "/admin/system/mail"
+              },
+              6:{
+                title: "管理者帳號管理",
+                link: "/admin/system/admin"
+              }
+          }
+      }
+  }
+
+
+
+#admin-sidebar-block.admin-sidebar-block
+    .sidebar-menu-list
+        ul.menu-list
+            each item,index in sidebarMenuItem
+                +adminMenuItem(item)
+    .sidebar-producer
+        .sidebar-producer__content Produced by:
+        .sidebar-producer__link 
+            a(href="https://www.yimaninfotek.net/") Benshi

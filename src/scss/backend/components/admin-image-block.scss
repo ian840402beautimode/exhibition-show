@@ -1,0 +1,15 @@
+.admin-image-block{
+    display: flex;
+    align-items: flex-start;
+    .admin-image-block__label{
+        width: 217px;
+        display: block;
+        color: $colorSecond;
+        font-size: $font-size-16;
+        margin-top: 2px;
+        position: relative;
+    }
+    .admin-image-block__content{
+        width: calc(100% - 217px);
+    }
+}

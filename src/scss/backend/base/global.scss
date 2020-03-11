@@ -1,0 +1,35 @@
+//input & textarea 錯誤訊息樣式
+.error-message{
+    color: #d00d00;
+    font-size: $font-size-12;
+    padding-top: 10px;
+    display: block;
+}
+#page-title{
+    display: none;
+}
+
+.item-image-file{
+    pointer-events: none;
+    visibility: hidden;
+    width: 0;
+    margin-top: 0;
+    & + .error-message{
+        margin-top: 0;
+    }
+}
+
+.page-placeholder-text{
+    color: #949090;
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 12px;
+}
+
+.admin-eidt-block-mode{
+    display: none;
+    &.select{
+        display: block;
+    }
+}

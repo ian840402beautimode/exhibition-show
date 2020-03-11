@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="../../../../plugins/ckeditor/ckeditor.js"></script>
+    <title></title>
+  <link href="css/style.css" rel="stylesheet"></head>
+  <body class="admin-backend-page">
+    <header class="admin-header" id="admin-header">
+      <div class="admin-header-block" id="admin-header-block">
+        <div class="header-left-content">
+          <div class="header-left-content__sidebar-btn" id="admin-sidebar-btn">
+            <div class="btn-line style">
+              <div class="btn-line__left"></div>
+              <div class="btn-line__right"></div>
+            </div>
+            <div class="btn-line style">
+              <div class="btn-line__left"></div>
+              <div class="btn-line__right"></div>
+            </div>
+            <div class="btn-line"></div>
+          </div>
+        </div>
+        <div class="header-right-content">
+          <div class="header-right-content__page-title page-title"></div>
+          <div class="header-right-content__user-info">
+            <div class="header-right-content__user-info__item user-status">Admin, 2018/12/15 15:00</div>
+            <div class="header-right-content__user-info__logout-btn">
+              <button type="submit">登出</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <aside class="admin-sidebar" id="admin-sidebar">
+        <div class="admin-sidebar-block" id="admin-sidebar-block">
+          <div class="sidebar-menu-list">
+            <ul class="menu-list">
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">資料更新管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/data/index">資料更新管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/data/manual">手動資料更新列表</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/data/member">會員自動更新列表</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/data/order">訂單自動更新列表</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">產品線管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/product/category">產品類別管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/product/series">產品系列管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/product/commodity">產品管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/product/upload">Excel 檔上傳</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">會員管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/member/list">會員列表</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/member/message">會員訊息管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/member/upload">Excel 檔上傳</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">訂單管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/order/index">訂單總覽</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/order/waitpay">已訂購未付款</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/order/waitship">已付款未出貨</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/order/ship">已出貨</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/order/returns">已退貨</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/order/cancel">取消訂單</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/order/activity-cancel">活動取消訂單</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/order/excel">報表匯出</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">購物流程管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/performance">Step1 業績地區管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/office">Step1 營業所取貨管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/delivery">Step1 配送方式管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/charity">Step2 愛心碼管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/payment">Step3 付款方式管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/remittance">Step3 匯款日期管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/freight">Step4 運費管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/terms">Step4 購物條款管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/close">結業積日管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/shopping-process/renew">續約日期管理</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">購物活動管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="#">五行商品設定</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="#">活動管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="#">序號活動管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="#">摸彩活動管理</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">關於我們管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/about">內容管理</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">加入東震管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/join/first">第一層列表管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/join/second">第二層列表管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/join/third">第三層列表管理</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">東震之聲管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/sound/rubric">總經理專欄</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/sound/matter">行政事項公告</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/sound/calendar">行事曆</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/sound/news">最新消息</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/sound/travel">旅遊資訊</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">客服中心管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/service/contact">聯絡我們管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/service/stronghold">全國通訊錄管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/service/class-list">客服中心類別管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/service/class-content-list">客服中心管理</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">首頁管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/index/app/edit">APP 首頁管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/index/banner">輪播圖片管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/index/ad">跑馬燈管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/index/scam/edit">詐騙資訊管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/index/performance/edit">業績與業績信箱管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/index/hour">每日時局</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">資源管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/resources/video">影片上傳</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-list__item">
+                        <div class="menu-list__item__title">網站系統管理</div>
+                        <ul class="sub-menu">
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/system/login-message">登入訊息管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/system/shopping">購物功能開關</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/system/ip">全站開關</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/system/information">網站資訊管理</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/system/mail">郵件參數開關</a></li>
+                                  <li class="sub-menu__item"><a class="menu__link" href="/admin/system/admin">管理者帳號管理</a></li>
+                        </ul>
+                      </li>
+            </ul>
+          </div>
+          <div class="sidebar-producer">
+            <div class="sidebar-producer__content">Produced by:</div>
+            <div class="sidebar-producer__link"> <a href="https://www.yimaninfotek.net/">Benshi</a></div>
+          </div>
+        </div>
+      </aside>
+      <article class="admin-content" id="admin-content">
+        <div class="page-placeholder-text">僅支援 Chrome 瀏覽器，最小寬度 1024px。</div>
+      </article>
+    </main>
+  <script type="text/javascript" src="js/main.js"></script></body>
+</html>
