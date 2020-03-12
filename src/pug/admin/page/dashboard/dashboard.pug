@@ -1,5 +1,84 @@
 extends ../../layouts/default.pug
+include ../../mixins/input.pug
+include ../../mixins/textarea.pug
+include ../../mixins/text.pug
+include ../../mixins/button.pug
 
 block head
     title
 block content
+    form#admin-edit-block.admin-edit-block
+        .admin-page-header-controller-button-block
+            .button-block__item
+                +formExcelButton('excel-btn','excel_btn','excel上傳')
+            .button-block__item
+                +formFeaturesButton('features-btn', '功能按鈕')
+            .button-block__item
+                +formLinkButton('link-btn', '#', '連結按鈕')
+        .admin-page-inbox._add-line
+            .admin-form.event-slide
+                .admin-form__header
+                    .header__title 編輯
+                .admin-form__content
+                    +formInputRequired('edit-input','edit_input', '編輯：', 'text', '提示')
+                    +formInput('edit-input','edit_input', '編輯：', 'text')
+                    +formDateInput('edit-input','edit_input', '時間選擇：')
+                    +formDateInputRequired('edit-input','edit_input', '時間選擇：')
+                    +formTextarea('edit-input','edit_input', '編輯：')
+                    +formCkEditorTextarea('edit-input','edit_input', 'ck編輯：')
+                    +formDateInputFilter('from-date','to-date', '時間篩選：')
+                    +formText('edit-text', '內容：', '敘述')
+                    .admin-item-block
+                        .admin-item-block__label 下拉選單：
+                        .admin-item-block__content
+                            select.admin-item-block__content__select
+                                option(value="") 全部
+                    .admin-item-block
+                        .admin-item-block__label checkbox：
+                        .admin-item-block__content._checkbox-wrap-mode
+                            .admin-item-block__content__checkbox
+                                input(type="checkbox", name="checkbox").item__checkbox#edit-checkbox1
+                                label(for="edit-checkbox1").item__checkbox-title 選項
+                            .admin-item-block__content__checkbox
+                                input(type="checkbox", name="checkbox").item__checkbox#edit-checkbox2
+                                label(for="edit-checkbox2").item__checkbox-title 選項
+                    .admin-item-block
+                        .admin-item-block__label radio：
+                        .admin-item-block__content._row-mode
+                            .admin-item-block__content__radio
+                                input(type="radio" name="radio" value=0 checked).radio-input#radio-btn1
+                                label(for="radio-btn1").radio-label 開啟
+                            .admin-item-block__content__radio
+                                input(type="radio" name="radio" value=1).radio-input#radio-btn2
+                                label(for="radio-btn2").radio-label 關閉
+                    .admin-item-block
+                        .admin-item-block__label 功能按鈕：
+                        .admin-item-block__content._row-mode
+                            .admin-item-block__content__features-btn 按鈕1
+                            .admin-item-block__content__features-btn 按鈕2
+                    .admin-item-block
+                            label.admin-item-block__label 連結按鈕：
+                            .admin-item-block__content
+                                .admin-item-block__content__link-btn
+                                    a(href="#").link-btn__content 範例檔案下載
+                    .admin-item-block
+                        label.admin-item-block__label 圖片：
+                        .admin-item-block__content
+                            .admin-item-block__content__image-upload
+                                .picture#admin-edit-image
+                                .controller
+                                    .controller__button
+                                        input(type="file", accept=".png,.jpg" name="admin_edit_upload").button__input#admin-edit-upload
+                                        .button__input-style 選擇檔案
+                                    input(type="text" name="admin_edit_title").controller__hidden-input#admin-edit-upload-title
+                                    .controller__info
+                                        .info__content  
+                                        .info__close
+                                ul.content
+                                    li.content__description 建議尺寸：寬448 px x 高299 px 像素
+                                    li.content__description 檔案限定：JPG、PNG
+                                    li.content__description 檔案大小：1.5Mb 內 (檔案越小瀏覽下載越快)
+        +formSaveButton('save')
+
+    
+                    

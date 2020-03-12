@@ -1,13 +1,5 @@
 .admin-filter-block {
     box-sizing: border-box;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    &.show{
-        opacity: 1;
-        visibility: visible;
-        pointer-events: visible;
-    }
     &__date {
         .date-filter {
             display: flex;
@@ -15,7 +7,7 @@
             &__date {
                 margin: 0px 8px;
                 position: relative;
-                &._ml0{
+                &:first-child{
                     margin-left: 0;
                 }
                 input {

@@ -1,0 +1,136 @@
+.form-excel-button{
+    display: flex;
+    &__flex{
+        .excel-button{
+            position: relative;
+            padding: 0 20px;
+            height: 35px;
+            border: 1px solid #d2d2d2;
+            border-radius: 3px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            background-color: $colorWhite;
+            @include transition(.4s);
+            &:hover{
+                @include transition(.4s);
+                background-color: #efefef;
+            }
+            &.mr15{
+                margin-right: 15px;
+            }
+            &__title{
+                width: 100%;
+                height: 100%;
+                font-size: $font-size-16;
+                color: $colorBlack;
+                text-align: center;
+                line-height: 2;
+                pointer-events: none;
+            }
+            &__input{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+        .excel-filename{
+            display: none;
+            font-size: $font-size-16;
+            color: $colorBlack;
+            margin-left: 10px;
+            margin-bottom: 15px;
+            &.show{
+                display: block;
+            }
+        }
+    }
+    &__send{
+        &.show{
+            display: block;
+        }
+        margin-left: 15px;
+        display: none;
+        font-size: $font-size-16;
+        border: 1px solid $colorMain;
+        border-radius: 2px;
+        box-sizing: border-box;
+        width: 95px;
+        height: 35px;
+        cursor: pointer;
+        text-align: center;
+        margin-bottom: 10px;
+        background-color: $colorMain;
+        color: $colorWhite;
+        @include transition(.4s);
+        &:hover{
+            background-color: $colorWhite;
+            color: $colorMain;
+            border-color: $colorMain;
+            @include transition(.4s);
+        }
+    }
+}
+.form-features-button{
+    width: auto;
+    height: 35px;
+    padding: 0 20px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: $colorWhite;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    @include transition(.4s);
+    background-color: $colorWhite;
+    &:hover{
+        @include transition(.4s);
+        background-color: #efefef;
+    }
+}
+.form-link-button{
+    width: auto;
+    height: 35px;
+    padding: 0 20px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: $colorWhite;
+    display: flex;
+    align-items: center;
+    a{
+        font-size: $font-size-16;
+        color: $colorBlack;
+    }
+    @include transition(.4s);
+    background-color: $colorWhite;
+    &:hover{
+        @include transition(.4s);
+        background-color: #efefef;
+    }
+}
+.form-save-button{
+    font-size: $font-size-16;
+    border: 1px solid $colorMain;
+    background-color: $colorMain;
+    color: $colorWhite;
+    border-radius: 3px;
+    box-sizing: border-box;
+    height: 35px;
+    padding: 0 20px;
+    cursor: pointer;
+    line-height: 2;
+    text-align: center;
+    @include transition(.4s);
+    &:hover{
+        background-color: $colorWhite;
+        color: $colorMain;
+    }
+    &:focus{
+        outline: 0;
+    }
+}
