@@ -71,8 +71,8 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 					 * Note: all rules have been written separately so
 					 * it was possible to specify required classes.
 					 */
-					extraAllowedContent: 'span(!FontColor1);span(!FontColor2);span(!FontColor3);' +
-						'span(!FontColor1BG);span(!FontColor2BG);span(!FontColor3BG);' +
+					extraAllowedContent: 'span(!FontColor1);span(!FontcolorLogin);span(!FontcolorForm);' +
+						'span(!FontColor1BG);span(!FontcolorLoginBG);span(!FontcolorFormBG);' +
 						'span(!FontComic);span(!FontCourier);span(!FontTimes);' +
 						'span(!FontSmaller);span(!FontLarger);span(!FontSmall);span(!FontBig);span(!FontDouble)',
 
@@ -157,7 +157,7 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 					 */
 					colorButton_enableMore: false,
 
-					colorButton_colors: 'FontColor1/FF9900,FontColor2/0066CC,FontColor3/F00',
+					colorButton_colors: 'FontColor1/FF9900,FontcolorLogin/0066CC,FontcolorForm/F00',
 					colorButton_foreStyle: {
 						element: 'span',
 						attributes: { 'class': '#(color)' },

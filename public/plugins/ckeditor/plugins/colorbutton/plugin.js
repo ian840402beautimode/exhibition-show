@@ -402,7 +402,7 @@ CKEDITOR.plugins.add( 'colorbutton', {
  *		// Brazil colors only.
  *		config.colorButton_colors = '00923E,F8C100,28166F';
  *
- *		config.colorButton_colors = 'FontColor1/FF9900,FontColor2/0066CC,FontColor3/F00';
+ *		config.colorButton_colors = 'FontColor1/FF9900,FontcolorLogin/0066CC,FontcolorForm/F00';
  *
  *		// CKEditor color palette available before version 4.6.2.
  *		config.colorButton_colors =

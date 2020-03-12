@@ -110,12 +110,12 @@ body
 	color: #ff9900;
 }
 
-.FontColor2
+.FontcolorLogin
 {
 	color: #0066cc;
 }
 
-.FontColor3
+.FontcolorForm
 {
 	color: #ff0000;
 }
@@ -125,12 +125,12 @@ body
 	background-color: #ff9900;
 }
 
-.FontColor2BG
+.FontcolorLoginBG
 {
 	background-color: #0066cc;
 }
 
-.FontColor3BG
+.FontcolorFormBG
 {
 	background-color: #ff0000;
 }

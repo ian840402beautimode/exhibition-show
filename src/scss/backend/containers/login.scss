@@ -1,7 +1,7 @@
 .login-block{
     width: 100vw;
     height: 100vh;
-    background-color: $color1;
+    background-color: #fafafa;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -44,7 +44,7 @@
                     box-sizing: border-box;
                     border-radius: 2px;
                     margin-bottom: 8px;
-                    background-color: $color2;
+                    background-color: #f9f9f9;
                     &__icon{
                         width: 16px;
                         margin-right: 16px;
@@ -53,7 +53,7 @@
                         width: calc(100% - 16px - 16px);
                         height: 17px;
                         border: 0;
-                        background-color: $color2;
+                        background-color: #f9f9f9;
                         color: rgba(0,0,0,0.5);
                     }
                 }

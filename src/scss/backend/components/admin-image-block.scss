@@ -1,0 +1,25 @@
+.admin-image-block{
+    display: flex;
+    align-items: flex-start;
+    &__label{
+        width: 230px;
+        display: block;
+        color: $colorSecond;
+        font-size: $font-size-16;
+        margin-top: 2px;
+        position: relative;
+        &.required{
+            &:after{
+                position: relative;
+                content: "*";
+                right: 0;
+                top: 0;
+                color: #ff0000;
+                font-size: $font-size-12;
+            }
+        }
+    }
+    &__content{
+        width: calc(100% - 230px);
+    }
+}
