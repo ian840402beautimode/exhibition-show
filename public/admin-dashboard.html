@@ -215,6 +215,73 @@
           </div>
           <button class="form-save-button" type="submit" id="save">儲存</button>
         </form>
+        <form class="admin-list-block" id="admin-list-block">
+          <div class="admin-page-header-controller-button-block">
+            <div class="button-block__item">
+              <div class="form-link-button" id="link-btn"><a href="#">新增</a></div>
+            </div>
+            <div class="button-block__item">
+              <div class="admin-show-hide-delete-button-block event-list-show-hide-delete-button">
+                <div class="admin-show-hide-delete-button-block__line"></div>
+                <div class="admin-show-hide-delete-button-block__icon-block">
+                  <div class="admin-show-hide-delete-button-block__icon-block__item show-icon all-show-btn"></div>
+                  <div class="admin-show-hide-delete-button-block__icon-block__item hide-icon all-hide-btn"></div>
+                  <div class="admin-show-hide-delete-button-block__icon-block__item delete-icon all-delete-btn"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="table-list-wrapper">
+            <table class="admin-table-style _show" id="admin-sound-matter-list">
+              <thead>
+                <tr>
+                  <th class="hide-sort-tag">
+                    <input class="admin-item-checkbox admin-table-first-checkbox" type="checkbox">
+                  </th>
+                  <th>#</th>
+                  <th> 
+                    <div class="admin-item-sort-title">
+                      <div class="admin-item-sort-title__title">排序</div>
+                      <div class="admin-item-sort-title__button" id="save-button">儲存</div>
+                    </div>
+                  </th>
+                  <th>標題</th>
+                  <th>狀態</th>
+                  <th>最後更新時間</th>
+                  <th>更新管理員</th>
+                  <th>瀏覽</th>
+                  <th>動作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input class="admin-item-checkbox" type="checkbox">
+                  </td>
+                  <td></td>
+                  <td>
+                    <input class="admin-item-sort" type="text">
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class="admin-item-scan-block">
+                      <div class="admin-item-scan-block__num">3</div><a class="admin-item-scan-block__button" href="#">瀏覽</a>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="item-controller">
+                      <div class="item-controller__delete"><a href="/"></a></div>
+                      <div class="item-controller__edit"><a href="/"></a></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </form>
         <div class="page-placeholder-text">僅支援 Chrome 瀏覽器，最小寬度 1024px。</div>
       </article>
     </main>

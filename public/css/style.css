@@ -1226,9 +1226,8 @@ div {
 .admin-page-header-controller-button-block {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start; }
-  .admin-page-header-controller-button-block._mb15 {
-    margin-bottom: 15px; }
+  justify-content: flex-start;
+  margin-bottom: 10px; }
   .admin-page-header-controller-button-block .button-block__item {
     margin-right: 15px; }
 
@@ -1311,7 +1310,6 @@ div {
     border: 1px solid #d2d2d2;
     border-radius: 3px;
     box-sizing: border-box;
-    margin-bottom: 10px;
     background-color: #ffffff;
     transition: all 0.4s ease-out;
     -webkit-transition: all 0.4s ease-out; }
@@ -1411,6 +1409,8 @@ div {
     background-color: #efefef; }
 
 .form-save-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 16px;
   border: 1px solid #ff4438;
   background-color: #ff4438;
@@ -1730,67 +1730,6 @@ div {
 .event-timepicker .datepicker--time {
   border-top: none; }
 
-.admin-input-file {
-  display: flex;
-  align-items: flex-start; }
-  .admin-input-file__label {
-    width: 230px;
-    display: block;
-    color: #424242;
-    font-size: 16px;
-    margin-top: 2px;
-    position: relative; }
-    .admin-input-file__label._required:after {
-      position: relative;
-      content: "*";
-      right: 0;
-      top: 0;
-      color: #ff0000;
-      font-size: 12px; }
-  .admin-input-file__content {
-    width: calc(100% - 230px);
-    display: flex;
-    align-items: center; }
-    .admin-input-file__content._vertical-mode {
-      flex-direction: column;
-      align-items: flex-start; }
-    .admin-input-file__content__btn {
-      padding: 0 20px;
-      height: 29px;
-      border: 1px solid #d2d2d2;
-      box-sizing: border-box;
-      border-radius: 3px;
-      color: #424242;
-      font-size: 12px;
-      position: relative;
-      display: inline-block;
-      transition: all 0.4s ease-out;
-      -webkit-transition: all 0.4s ease-out; }
-      .admin-input-file__content__btn > .btn__input {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        cursor: pointer; }
-      .admin-input-file__content__btn > .btn__title {
-        line-height: 29px; }
-      .admin-input-file__content__btn:hover {
-        background-color: #efefef;
-        transition: all 0.4s ease-out;
-        -webkit-transition: all 0.4s ease-out; }
-    .admin-input-file__content__file-name {
-      margin-left: 15px;
-      color: #424242;
-      font-size: 16px; }
-    .admin-input-file__content__file-text {
-      color: #424242;
-      font-size: 12px;
-      margin-bottom: 10px; }
-    .admin-input-file__content__item {
-      margin-bottom: 10px; }
-
 .webform-list-wrapper {
   margin-top: 30px; }
 
@@ -2097,132 +2036,6 @@ div {
 
 .table-list-wrapper {
   position: relative; }
-
-.admin-imgae-upload.row-mode {
-  position: relative; }
-  .admin-imgae-upload.row-mode .imgae-upload__picture {
-    position: absolute;
-    left: 0;
-    margin-bottom: 0;
-    margin-right: 30px;
-    height: 100px;
-    width: 180px;
-    display: none; }
-    .admin-imgae-upload.row-mode .imgae-upload__picture > img {
-      height: auto; }
-  .admin-imgae-upload.row-mode.show .imgae-upload__picture {
-    display: block; }
-  .admin-imgae-upload.row-mode.show .imgae-upload__controller {
-    position: relative;
-    left: 210px; }
-  .admin-imgae-upload.row-mode.show .image-upload__content {
-    position: relative;
-    left: 210px; }
-
-.admin-imgae-upload.show .imgae-upload__picture {
-  display: block; }
-
-.admin-imgae-upload .imgae-upload__picture {
-  height: 50px;
-  margin-bottom: 17px;
-  position: relative;
-  display: none; }
-  .admin-imgae-upload .imgae-upload__picture > img {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    max-height: 100%; }
-
-.admin-imgae-upload .imgae-upload__controller {
-  display: flex;
-  align-items: center; }
-  .admin-imgae-upload .imgae-upload__controller .imgae-upload__controller__button {
-    position: relative;
-    width: 70px;
-    height: 26px;
-    overflow: hidden;
-    margin-right: 9px; }
-    .admin-imgae-upload .imgae-upload__controller .imgae-upload__controller__button:hover .button__input-style {
-      background-color: #efefef;
-      transition: all 0.4s ease-out;
-      -webkit-transition: all 0.4s ease-out; }
-    .admin-imgae-upload .imgae-upload__controller .imgae-upload__controller__button .button__input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      z-index: 1;
-      cursor: pointer;
-      font-size: 11px; }
-    .admin-imgae-upload .imgae-upload__controller .imgae-upload__controller__button .button__input-style {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 1px solid #d2d2d2;
-      box-sizing: border-box;
-      border-radius: 2px;
-      font-size: 12px;
-      color: #424242;
-      text-align: center;
-      line-height: 2;
-      transition: all 0.4s ease-out;
-      -webkit-transition: all 0.4s ease-out; }
-  .admin-imgae-upload .imgae-upload__controller .imgae-upload__controller__info {
-    align-items: center;
-    display: none; }
-    .admin-imgae-upload .imgae-upload__controller .imgae-upload__controller__info.show {
-      display: flex; }
-    .admin-imgae-upload .imgae-upload__controller .imgae-upload__controller__info .info__content {
-      color: #424242;
-      font-size: 12px; }
-    .admin-imgae-upload .imgae-upload__controller .imgae-upload__controller__info .info__close {
-      position: relative;
-      width: 10px;
-      height: 10px;
-      margin-top: 5px;
-      margin-left: 5px;
-      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAV5JREFUaAXtl10KwjAQhNuexyc9oPWA+uR5qoywsJSm3Z8JFNyCJGIyO99saeow1FUJVAKVQCVQCfxLAs/LdcanF29Ef7SagfhnWe5YP07T4/Z+zda9lnVRfROAFhczTIiM/iSGvCO6gcLefev1W+bXa/a+mzoAgVahTCcYmmYANgTDPDy5AFgQLPMhgCwE03wYIArBNp8C8EL0MJ8GsEL0Mk8BOILA73KCYy5X5vErGhjdTyG9Wc9bKes1MmeZhx4NAGIWCKZ5OsARBNs86oXfhbD5DFfdQtIFy/0va5m3EqUDLfMwCtOnfozumZd/bZY10h3vmOqAx5hnrQciDBAxFNlzBBMCyBjJ7N2CcQMwDDA0BMYFwCzM0jIDsApKchgZmiYARiFtXM+z2uF3IdZpirNCDjwNZp2bOgAxnRTLvDbZW/9XC0Xw0YWZ8976TK+lVQlUApVAJVAJUBL4Aj4nfYeHYLgfAAAAAElFTkSuQmCC);
-      background-repeat: no-repeat;
-      background-size: cover;
-      cursor: pointer; }
-
-.admin-imgae-upload .image-upload__content {
-  margin-top: 17px; }
-  .admin-imgae-upload .image-upload__content .content__description {
-    font-size: 12px;
-    color: #424242;
-    margin-bottom: 6px; }
-
-.admin-image-block {
-  display: flex;
-  align-items: flex-start; }
-  .admin-image-block__label {
-    width: 230px;
-    display: block;
-    color: #424242;
-    font-size: 16px;
-    margin-top: 2px;
-    position: relative; }
-    .admin-image-block__label._required:after {
-      position: relative;
-      content: "*";
-      right: 0;
-      top: 0;
-      color: #ff0000;
-      font-size: 12px; }
-  .admin-image-block__content {
-    width: calc(100% - 230px); }
-
-.admin-image-block-segmentation {
-  display: flex;
-  flex-wrap: wrap; }
-  .admin-image-block-segmentation__box {
-    width: 50%;
-    margin-bottom: 15px; }
 
 .admin-filter-block {
   box-sizing: border-box; }
