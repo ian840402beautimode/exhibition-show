@@ -1,4 +1,4 @@
-import { editSuccess, deleteSuccess, deleteFail } from '../common/sweetalert.js';
+import { editSuccess, deleteSuccess } from '../common/sweetalert.js';
 // 列表勾選功能
 export function listCheckboxClick() {
     $('body').on('click','.admin-table-first-checkbox',function(){
@@ -36,18 +36,10 @@ export const listCheckboxClickApiEvent = (apiAllStatus, apiAllDelete) => {
     })
     $('.all-delete-btn').on('click', function (e) {
         let data = getListId('delete');
-        console.log(data);
-        if (data.some(item => item.count > 0)) {
-            deleteFail();
-        }else if(data.some(item => item.bannerCount > 0)){
-            console.log('bannersccount');
-            deleteFail();
-        } else {
-            const allDelete = () => {
-                apiAllDelete(data).then((res) => { console.log(res);  }).catch(err => { console.log(err) })
-            }
-            deleteSuccess(allDelete)
+        const allDelete = () => {
+            apiAllDelete(data).then((res) => { console.log(res) }).catch(err => { console.log(err) })
         }
+        deleteSuccess(allDelete)
     })
 }
 
@@ -60,28 +52,23 @@ export const getListId = (mode) => {
         case 'hide':
             for (let i = 0; i < dom.length; i++) {
                 if (dom[i].checked) {
-                    data.push({ id:$(dom[i]).data('id'), display: 0 })
+                    data.push({ id:$(dom[i]).data('id'), status: 0 })
                 }
             }
             break;
         case 'show':
             for (let i = 0; i < dom.length; i++) {
                 if (dom[i].checked) {
-                    data.push({ id:$(dom[i]).data('id'), display: 1 })
+                    data.push({ id:$(dom[i]).data('id'), status: 1 })
                 }
             }
             break;
         case 'delete':
             for (let i = 0; i < dom.length; i++) {
                 if (dom[i].checked) {
-                    data.push({
-                        id: $(dom[i]).data('id'),
-                        count: $(dom[i]).data('count'),
-                        bannerCount: $(dom[i]).data('bannersccount')
-                    })
+                    data.push({ id:$(dom[i]).data('id') })
                 }
             }
-
             break;
     }
     return data
