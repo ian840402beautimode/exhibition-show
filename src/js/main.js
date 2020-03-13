@@ -1,3 +1,6 @@
+import './pluging';
+import './router/page_view.js';
+import './global/form/login.js';
 
 // 後台功能
 import './global/backend/window-resize.js';
