@@ -2,6 +2,9 @@
 import { viewPath } from './path.js';
 
 //---- 後台 -----//
+// 範例頁
+import { adminTemplatePage } from '../page/admin-template.js';
+
 // 主頁
 import { adminDashboardPage } from '../page/admin-dashboard.js';
 
@@ -21,8 +24,13 @@ switch (true) {     // 前台頁面
         // Do nothing....
         break;
 
+    // 後台 範例頁
+    case viewPath.adminTemplate.dev.test(localUrlPath): 
+        adminTemplatePage();
+        break;
+
     // 後台 主頁
-    case viewPath.adminDashboard.dev.test(localUrlPath) || viewPath.adminDashboard.pro.test(localUrlPath): 
+    case viewPath.adminDashboard.dev.test(localUrlPath): 
         adminDashboardPage();
         break;
 }

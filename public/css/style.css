@@ -1303,46 +1303,48 @@ div {
 
 .form-excel-button {
   display: flex; }
-  .form-excel-button__flex .excel-button {
-    position: relative;
-    padding: 0 20px;
-    height: 35px;
-    border: 1px solid #d2d2d2;
-    border-radius: 3px;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    transition: all 0.4s ease-out;
-    -webkit-transition: all 0.4s ease-out; }
-    .form-excel-button__flex .excel-button:hover {
+  .form-excel-button__flex {
+    display: flex;
+    align-items: center; }
+    .form-excel-button__flex .excel-button {
+      position: relative;
+      padding: 0 20px;
+      height: 35px;
+      border: 1px solid #d2d2d2;
+      border-radius: 3px;
+      box-sizing: border-box;
+      background-color: #ffffff;
       transition: all 0.4s ease-out;
-      -webkit-transition: all 0.4s ease-out;
-      background-color: #efefef; }
-    .form-excel-button__flex .excel-button.mr15 {
-      margin-right: 15px; }
-    .form-excel-button__flex .excel-button__title {
-      width: 100%;
-      height: 100%;
+      -webkit-transition: all 0.4s ease-out; }
+      .form-excel-button__flex .excel-button:hover {
+        transition: all 0.4s ease-out;
+        -webkit-transition: all 0.4s ease-out;
+        background-color: #efefef; }
+      .form-excel-button__flex .excel-button.mr15 {
+        margin-right: 15px; }
+      .form-excel-button__flex .excel-button__title {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+        color: #000000;
+        text-align: center;
+        line-height: 2;
+        pointer-events: none; }
+      .form-excel-button__flex .excel-button__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer; }
+    .form-excel-button__flex .excel-filename {
+      display: none;
       font-size: 16px;
       color: #000000;
-      text-align: center;
-      line-height: 2;
-      pointer-events: none; }
-    .form-excel-button__flex .excel-button__input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: pointer; }
-  .form-excel-button__flex .excel-filename {
-    display: none;
-    font-size: 16px;
-    color: #000000;
-    margin-left: 10px;
-    margin-bottom: 15px; }
-    .form-excel-button__flex .excel-filename.show {
-      display: block; }
+      margin-left: 10px; }
+      .form-excel-button__flex .excel-filename.show {
+        display: block; }
   .form-excel-button__send {
     margin-left: 15px;
     display: none;
@@ -1354,7 +1356,6 @@ div {
     height: 35px;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 10px;
     background-color: #ff4438;
     color: #ffffff;
     transition: all 0.4s ease-out;
@@ -2263,7 +2264,7 @@ div {
       .admin-item-block__content__image-upload.row-mode.show .image-upload__content {
         position: relative;
         left: 210px; }
-    .admin-item-block__content__image-upload.show .imgae-upload__picture {
+    .admin-item-block__content__image-upload.show .picture {
       display: block; }
     .admin-item-block__content__image-upload .picture {
       height: 50px;

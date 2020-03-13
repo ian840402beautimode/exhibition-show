@@ -17,7 +17,7 @@ export function formValidate(formName, rulesObj, messagesObj, submitEvent){
         return o;
     };
 
-    formName.find('.admin-form-button').click(function(){
+    formName.find('.event-form-button').click(function(){
         formName.validate({
             rules: rulesObj,
             messages: messagesObj,
