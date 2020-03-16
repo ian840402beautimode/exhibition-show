@@ -60,7 +60,7 @@
                 background-size: contain;
                 @include transition(.4s);
                 &:hover{
-                    background: url('../images/backend/show-icon-green.png');
+                    background: url('../images/backend/show-icon-hover.png');
                     background-size: contain;
                     @include transition(.4s);
                 }
@@ -70,7 +70,7 @@
                 background-size: contain;
                 @include transition(.4s);
                 &:hover{
-                    background: url('../images/backend/hide-icon-green.png');
+                    background: url('../images/backend/hide-icon-hover.png');
                     background-size: contain;
                     @include transition(.4s);
                 }
@@ -81,7 +81,7 @@
                 width: 22px;
                 @include transition(.4s);
                 &:hover{
-                    background: url('../images/backend/delete-icon-green.png') center center no-repeat;
+                    background: url('../images/backend/delete-icon-hover.png') center center no-repeat;
                     background-size: contain;
                     width: 22px;
                     @include transition(.4s);

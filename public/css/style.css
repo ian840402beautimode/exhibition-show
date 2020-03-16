@@ -1263,7 +1263,7 @@ div {
         transition: all 0.4s ease-out;
         -webkit-transition: all 0.4s ease-out; }
         .admin-show-hide-delete-button-block__icon-block__item.show-icon:hover {
-          background: url(../images/backend/show-icon-green.png);
+          background: url(../images/backend/show-icon-hover.png);
           background-size: contain;
           transition: all 0.4s ease-out;
           -webkit-transition: all 0.4s ease-out; }
@@ -1273,7 +1273,7 @@ div {
         transition: all 0.4s ease-out;
         -webkit-transition: all 0.4s ease-out; }
         .admin-show-hide-delete-button-block__icon-block__item.hide-icon:hover {
-          background: url(../images/backend/hide-icon-green.png);
+          background: url(../images/backend/hide-icon-hover.png);
           background-size: contain;
           transition: all 0.4s ease-out;
           -webkit-transition: all 0.4s ease-out; }
@@ -1284,7 +1284,7 @@ div {
         transition: all 0.4s ease-out;
         -webkit-transition: all 0.4s ease-out; }
         .admin-show-hide-delete-button-block__icon-block__item.delete-icon:hover {
-          background: url(../images/backend/delete-icon-green.png) center center no-repeat;
+          background: url(../images/backend/delete-icon-hover.png) center center no-repeat;
           background-size: contain;
           width: 22px;
           transition: all 0.4s ease-out;
@@ -2246,22 +2246,27 @@ div {
         font-size: 12px; }
     .admin-item-block__content__image-upload._row-mode {
       position: relative; }
-      .admin-item-block__content__image-upload._row-mode .imgae-upload__picture {
+      .admin-item-block__content__image-upload._row-mode .picture {
         position: absolute;
         left: 0;
         margin-bottom: 0;
         margin-right: 30px;
         height: 100px;
         width: 180px;
-        display: none; }
-        .admin-item-block__content__image-upload._row-mode .imgae-upload__picture > img {
-          height: auto; }
-      .admin-item-block__content__image-upload._row-mode.show .imgae-upload__picture {
-        display: block; }
-      .admin-item-block__content__image-upload._row-mode.show .imgae-upload__controller {
+        display: none;
+        justify-content: center;
+        align-items: center; }
+        .admin-item-block__content__image-upload._row-mode .picture > img {
+          height: auto;
+          width: auto;
+          max-width: 100%;
+          max-height: 100%; }
+      .admin-item-block__content__image-upload._row-mode._show .picture {
+        display: flex; }
+      .admin-item-block__content__image-upload._row-mode._show .controller {
         position: relative;
         left: 210px; }
-      .admin-item-block__content__image-upload._row-mode.show .image-upload__content {
+      .admin-item-block__content__image-upload._row-mode._show .content {
         position: relative;
         left: 210px; }
     .admin-item-block__content__image-upload._show .picture {
