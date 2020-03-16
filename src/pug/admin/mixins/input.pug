@@ -16,7 +16,7 @@ mixin formInputRequired(idName, name, title, type, placeholder)
 //- 非必填
 mixin formInput(idName, name, title, type, placeholder)
     if placeholder
-        .admin-item-block
+        .admin-item-block._align-items-start
             label.admin-item-block__label=title
             .admin-item-block__content
                 input(type=type, name=name, id=idName).event-item-value.admin-item-block__content__input
