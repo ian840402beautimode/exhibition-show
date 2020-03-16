@@ -1,5 +1,7 @@
 import { radioStatus, setRadioStatus } from '../../global/form/radio_check_status.js';
-import { numberWithCommas } from '../../global/common/number-with-commas.js'
+import { numberWithCommas } from '../../global/common/number-with-commas.js';
+import { uploadImageCheck } from '../../global/common/upload-file-check.js';
+import { isImageTitle } from '../../global/common/return-is-image-title.js';
 
 // 列表
 export const viewAdminTemplateList = (data) =>{
@@ -37,7 +39,8 @@ export const transferTemplateForm = () =>{
     let adminCkdom = CKEDITOR.instances.editckdom.getData();
     let data = {
         status: radioStatus("radio"),
-        content: adminCkdom
+        content: adminCkdom,
+        image: uploadImageCheck($('#admin-edit-image img').attr('src'))
     }
     return data;
 }
@@ -46,4 +49,10 @@ export const transferTemplateForm = () =>{
 export const returnTemplateForm = (data) =>{
     setRadioStatus($("#admin-edit-block"), data.status);
     CKEDITOR.instances.editckdom.setData(data.content);
+    isImageTitle(data.image_title, function loadImageInfo(){
+        $("#admin-edit-block").find(".admin-item-block__content__image-upload,.controller__info").addClass("show");
+        $("#admin-edit-image").append("<img src='"+ data.image +"'>");
+        $('#admin-edit-upload-title').val(data.image_title);
+        $("#admin-edit-upload").parents(".controller").find('.info__content').text(data.image_title);
+    });
 }

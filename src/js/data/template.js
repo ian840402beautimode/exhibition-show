@@ -6,7 +6,9 @@ export const templateData = [
         status: 0,
         price: 15000,
         total: 10,
-        content: "<p>test</p>"
+        content: "<p>test</p>",
+        image: "../images/backend/logo-orange.png",
+        image_title: "logo-orange"
     },
     {
         id:2,
