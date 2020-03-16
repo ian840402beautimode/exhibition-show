@@ -231,7 +231,7 @@
         &__image-upload{
             &._row-mode{
                 position: relative;
-                .imgae-upload__picture{
+                .picture{
                     position: absolute;
                     left: 0;
                     margin-bottom: 0;
@@ -239,19 +239,22 @@
                     height: 100px;
                     width: 180px;
                     display: none;
+                    justify-content: center;
+                    align-items: center;
                     >img{
-                        height: auto;
+                        width: auto;
+                        height: 100%;
                     }
                 }
-                &.show{
-                    .imgae-upload__picture{
-                        display: block;
+                &._show{
+                    .picture{
+                        display: flex;
                     }
-                    .imgae-upload__controller{
+                    .controller{
                         position: relative;
                         left: 210px;
                     }
-                    .image-upload__content{
+                    .content{
                         position: relative;
                         left: 210px;
                     }
