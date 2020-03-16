@@ -2244,9 +2244,9 @@ div {
       .admin-item-block__content__link-btn .link-btn__content {
         color: #424242;
         font-size: 12px; }
-    .admin-item-block__content__image-upload.row-mode {
+    .admin-item-block__content__image-upload._row-mode {
       position: relative; }
-      .admin-item-block__content__image-upload.row-mode .imgae-upload__picture {
+      .admin-item-block__content__image-upload._row-mode .imgae-upload__picture {
         position: absolute;
         left: 0;
         margin-bottom: 0;
@@ -2254,17 +2254,17 @@ div {
         height: 100px;
         width: 180px;
         display: none; }
-        .admin-item-block__content__image-upload.row-mode .imgae-upload__picture > img {
+        .admin-item-block__content__image-upload._row-mode .imgae-upload__picture > img {
           height: auto; }
-      .admin-item-block__content__image-upload.row-mode.show .imgae-upload__picture {
+      .admin-item-block__content__image-upload._row-mode.show .imgae-upload__picture {
         display: block; }
-      .admin-item-block__content__image-upload.row-mode.show .imgae-upload__controller {
+      .admin-item-block__content__image-upload._row-mode.show .imgae-upload__controller {
         position: relative;
         left: 210px; }
-      .admin-item-block__content__image-upload.row-mode.show .image-upload__content {
+      .admin-item-block__content__image-upload._row-mode.show .image-upload__content {
         position: relative;
         left: 210px; }
-    .admin-item-block__content__image-upload.show .picture {
+    .admin-item-block__content__image-upload._show .picture {
       display: block; }
     .admin-item-block__content__image-upload .picture {
       height: 50px;
@@ -2323,7 +2323,7 @@ div {
       .admin-item-block__content__image-upload .controller__info {
         align-items: center;
         display: none; }
-        .admin-item-block__content__image-upload .controller__info.show {
+        .admin-item-block__content__image-upload .controller__info._show {
           display: flex; }
         .admin-item-block__content__image-upload .controller__info .info__content {
           color: #424242;

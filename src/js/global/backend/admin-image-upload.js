@@ -23,12 +23,12 @@ function showImageInfo(idName){
             //清除舊的圖片資料
             clearImageInfo(idName);
             var fileName = this.files[i].name;
-            dom.find('.controller__info').addClass('show');
+            dom.find('.controller__info').addClass('_show');
             dom.find('.info__content').text(fileName);
             dom.find(".controller__hidden-input").val(fileName).trigger("change");   // 觸發條件從keyup改成change
             var reader = new FileReader();
             reader.onload = function (e) {
-              dom.addClass('show');
+              dom.addClass('_show');
               dom.find('.picture').append('<img src="'+ e.target.result +'"/>');
             }
             reader.readAsDataURL(this.files[i]);
@@ -48,7 +48,7 @@ function clearImageInfo(dom){
   //清空內容
   dom.closest('.admin-item-block__content__image-upload').find('.picture').empty();
   dom.closest('.admin-item-block__content__image-upload').find('.picture img').attr('src','');
-  dom.closest('.admin-item-block__content__image-upload').removeClass('show');
+  dom.closest('.admin-item-block__content__image-upload').removeClass('_show');
   dom.closest('.admin-item-block__content__image-upload').find('.info__content').text('');
-  dom.closest('.admin-item-block__content__image-upload').find('.controller__info').removeClass('show');
+  dom.closest('.admin-item-block__content__image-upload').find('.controller__info').removeClass('_show');
 }

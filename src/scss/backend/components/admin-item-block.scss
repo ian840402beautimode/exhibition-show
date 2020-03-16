@@ -229,7 +229,7 @@
 
         // 圖片上傳
         &__image-upload{
-            &.row-mode{
+            &._row-mode{
                 position: relative;
                 .imgae-upload__picture{
                     position: absolute;
@@ -257,7 +257,7 @@
                     }
                 }
             }
-            &.show{
+            &._show{
                 .picture{
                     display: block;
                 }
@@ -326,7 +326,7 @@
                 &__info{
                     align-items: center;
                     display: none;
-                    &.show{
+                    &._show{
                         display: flex;
                     }
                     .info__content{

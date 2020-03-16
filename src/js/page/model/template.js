@@ -50,7 +50,7 @@ export const returnTemplateForm = (data) =>{
     setRadioStatus($("#admin-edit-block"), data.status);
     CKEDITOR.instances.editckdom.setData(data.content);
     isImageTitle(data.image_title, function loadImageInfo(){
-        $("#admin-edit-block").find(".admin-item-block__content__image-upload,.controller__info").addClass("show");
+        $("#admin-edit-block").find(".admin-item-block__content__image-upload,.controller__info").addClass("_show");
         $("#admin-edit-image").append("<img src='"+ data.image +"'>");
         $('#admin-edit-upload-title').val(data.image_title);
         $("#admin-edit-upload").parents(".controller").find('.info__content').text(data.image_title);
