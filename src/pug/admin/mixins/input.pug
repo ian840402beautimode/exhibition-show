@@ -1,0 +1,61 @@
+//- 必填
+mixin formInputRequired(idName, name, title, type, placeholder)
+    if placeholder
+        .admin-item-block._align-items-start
+            label.admin-item-block__label._required=title
+            .admin-item-block__content
+                input(type=type, name=name, id=idName).event-item-value.admin-item-block__content__input
+                if placeholder
+                    .admin-item-block__content__placeholder=placeholder
+    else
+        .admin-item-block
+            label.admin-item-block__label._required=title
+            .admin-item-block__content
+                input(type=type, name=name, id=idName).event-item-value.admin-item-block__content__input
+
+//- 非必填
+mixin formInput(idName, name, title, type, placeholder)
+    if placeholder
+        .admin-item-block._align-items-start
+            label.admin-item-block__label=title
+            .admin-item-block__content
+                input(type=type, name=name, id=idName).event-item-value.admin-item-block__content__input
+                if placeholder
+                    .admin-item-block__content__placeholder=placeholder
+    else
+        .admin-item-block
+            label.admin-item-block__label=title
+            .admin-item-block__content
+                input(type=type, name=name, id=idName).event-item-value.admin-item-block__content__input
+
+//- 時間單選 非必填
+mixin formDateInput(idName, name, title)
+    .admin-item-block
+        label.admin-item-block__label=title
+        .admin-item-block__content
+            .admin-item-block__content__date
+                input(type="text", name=name, id=idName).date-input
+
+//- 時間單選 必填
+mixin formDateInputRequired(idName, name, title)
+    .admin-item-block
+        label.admin-item-block__label._required=title
+        .admin-item-block__content
+            .admin-item-block__content__date
+                input(type="text", name=name, id=idName).date-input
+
+//- 時間選雙選
+mixin formDateInputFilter(fromIdName, toIdName, title)
+    .admin-item-block
+        label.admin-item-block__label=title
+        .admin-item-block__content
+            .admin-filter-block
+                .admin-filter-block__date
+                    .date-filter
+                        .date-filter__date
+                            input(type="text" autocomplete="off", id=fromIdName).date-filter__date__item
+                        span -
+                        .date-filter__date
+                            input(type="text" autocomplete="off", id=toIdName).date-filter__date__item
+
+

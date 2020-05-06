@@ -1,0 +1,12 @@
+mixin formTextarea(idName, name, title)
+    .admin-item-block._align-items-start
+        label.admin-item-block__label=title
+        .admin-item-block__content
+            textarea(name=name, id=idName).admin-item-block__content__textarea
+
+//- ckeditor 樣式
+mixin formCkEditorTextarea(idName, name, title)
+    .admin-item-block._align-items-start
+        label.admin-item-block__label=title
+        .admin-item-block__content
+            textarea(name=name, id=idName).admin-item-block__content__textarea._height260px

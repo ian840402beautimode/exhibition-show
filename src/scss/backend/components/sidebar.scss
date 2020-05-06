@@ -19,7 +19,6 @@
                         padding: 9px 30px 9px 20px;
                         background-color: $colorWhite;
                         position: relative;
-                        @include transition(0.2s);
                         cursor: pointer;
                         &::before {
                             display: block;
@@ -30,7 +29,6 @@
                             margin-top: 3px;
                             background: url(../images/backend/sidebar-icon.png) center center no-repeat;
                             background-size: contain;
-                            @include transition(0.2s);
                         }
                         &::after {
                             display: block;
@@ -43,7 +41,6 @@
                             top: 50%;
                             right: 20px;
                             margin-top: -5px;
-                            @include transition(0.2s);
                         }
                         &:hover {
                             color: $colorWhite;
@@ -85,16 +82,13 @@
                         .menu-list__item__title {
                             color: $colorWhite;
                             background-color: $colorSidebar1;
-                            @include transition(0.2s);
                             &::before {
                                 background: url(../images/backend/sidebar-icon-h.png) center center no-repeat;
                                 background-size: contain;
-                                @include transition(0.2s);
                             }
                             &::after {
                                 background: url(../images/backend/sidebar-arrow-h.png) center center no-repeat;
                                 background-size: contain;
-                                @include transition(0.2s);
                             }
                         }
                     }

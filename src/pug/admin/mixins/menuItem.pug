@@ -1,0 +1,11 @@
+//- 後台雙層選單
+mixin adminMenuSubItem(data)
+    li.sub-menu__item
+        a.menu__link(href= data.link)= data.title
+
+mixin adminMenuItem(data)
+    li.menu-list__item
+        .menu-list__item__title= data.title
+        ul.sub-menu
+            each item,index in data.item
+                +adminMenuSubItem(item)

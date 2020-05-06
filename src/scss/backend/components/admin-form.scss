@@ -4,8 +4,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-top: 5px solid $color3;
-        border-bottom: 1px solid $color3;
+        border-top: 5px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
         padding: 6px 12px;
         box-sizing: border-box;
         background-color: $colorWhite;
@@ -16,16 +16,11 @@
     }
     &__content{
         background-color: $colorWhite;
-        &.image-upload-mode{
-            padding: 14px;
-        }
-        &.input-mode{
-            padding: 14px;
-        }
+        padding: 14px;
         &__item-block{
             width: 100%;
             border-bottom: 1px dashed $colorDashed;
-            padding: 15px 0;
+            padding: 10px 0;
         }
         &__item-block:last-child{
             border: 0;
@@ -43,9 +38,6 @@
                 margin-top: 4px;
                 margin-right: 4px;
             }
-        }
-        &__item-padding{
-            padding: 15px 0;
         }
     }
 }

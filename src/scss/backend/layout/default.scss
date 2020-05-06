@@ -13,8 +13,9 @@
             background-color: $colorWhite;
         }
         .admin-content {
+            position: relative;
             width: 100%;
-            background-color: $color1;
+            background-color: #fafafa;
             padding: 24px;
             padding-bottom: 100px;
             box-sizing: border-box;
@@ -23,23 +24,33 @@
 }
 
 //右邊內容頁佈局
-.admin-backend-page-inbox{
+.admin-page-inbox{
     display: flex;
     align-items: flex-start;
     margin-bottom: 10px;
     width: 100%;
-    .admin-backend-page-inbox__left{
+    &._add-line{
+        .admin-item-block{
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #dddddd;
+            &:last-child{
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+    .admin-page-inbox__left{
         margin-right: 12px;
         width: calc(50% - 12px);
     }
-    .admin-backend-page-inbox__right{
+    .admin-page-inbox__right{
         margin-left: 12px;
         width: calc(50% - 12px);
     }
 }
 
 //右邊內容頁按有區塊佈局
-.admin-backend-page-inbox-button-wrapper{
+.admin-page-inbox-button-wrapper{
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;

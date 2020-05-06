@@ -1,0 +1,26 @@
+include ../mixins/menuItem.pug
+
+-
+  var sidebarMenuItem = {
+      1:{
+          title: "主頁",
+          item: {
+              1:{
+                title: "內容管理",
+                link: "/admin-dashboard.html"
+              }
+          }
+      }
+  }
+
+
+
+#admin-sidebar-block.admin-sidebar-block
+    .sidebar-menu-list
+        ul.menu-list
+            each item,index in sidebarMenuItem
+                +adminMenuItem(item)
+    .sidebar-producer
+        .sidebar-producer__content Produced by:
+        .sidebar-producer__link 
+            a(href="https://www.yimaninfotek.net/") Benshi

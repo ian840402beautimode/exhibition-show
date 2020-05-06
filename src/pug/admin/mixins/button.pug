@@ -1,0 +1,24 @@
+//- 右側內容頁 -//
+//- excel 上傳按鈕
+mixin formExcelButton(idName, name, title, sendName)
+    .form-excel-button
+        .form-excel-button__flex
+            .excel-button
+                .excel-button__title=title
+                input(type="file" name=name, id=idName).excel-button__input
+            .excel-filename
+        button.form-excel-button__send(id=sendName) 確認送出
+
+//- 功能按鈕
+mixin formFeaturesButton(idName, title)
+    .form-features-button(id=idName)=title
+
+//- 連結按鈕
+mixin formLinkButton(idName, link, title)
+    .form-link-button(id=idName)
+        a(href=link)=title
+
+//- 儲存按鈕
+mixin formSaveButton(idName)
+    button(type="submit", id=idName).form-save-button.event-form-button 儲存
+    
