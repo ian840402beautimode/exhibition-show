@@ -32,13 +32,12 @@ module.exports = {
         ]
     },
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
-    // publicPath: '../../../../',            // 打包正式環境時使用
   },
   mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'dist'),
     port: 8080,
     open: true,
   },
@@ -93,14 +92,7 @@ module.exports = {
     new CleanWebpackPlugin({
         "verbose": true,
         "cleanOnceBeforeBuildPatterns": [
-            '**/*',
-            '!.htaccess',       // set exclude items
-            '!index.php',
-            '!mix-manifest.json',
-            '!robots.txt',
-            '!web.config',
-            '!favicon.ico',
-            '!plugins/**'
+            '**/*'
         ],
     }),
     new ExtractTextPlugin({
