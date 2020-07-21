@@ -1,0 +1,126 @@
+.exhibition-area-block {
+  display: none;
+  position: relative;
+  #area-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    z-index: 10;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all .8s ease-out;
+
+    &:hover {
+      transform: rotate(540deg);
+    }
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .exhibition-area {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  
+    &__items {
+      flex-basis: 20%;
+      max-width: 20%;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      transition: all .5s;
+      border-right: 5px solid #d6b05d;
+  
+      &:last-child {
+        border: 0;
+      }
+  
+      &.select {
+        flex-basis: 40%;
+        max-width: 40%;
+  
+        .item {
+          &__content {
+            .content {
+              max-width: 400px;
+              font-size: 40px;
+            }
+          }
+  
+          &__mask {
+            background-color: rgba($color: #d6b05d, $alpha: 0.4);
+          }
+          &__bg {
+            img {
+              -webkit-filter: unset;
+            }
+          }
+        }
+      }
+      &.unselect {
+        flex-basis: 15%;
+        max-width: 15%;
+      }
+  
+      .item {
+        display: block;
+        width: 100%;
+        height: 100%;
+        &__content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          padding: 80px 40px;
+          box-sizing: border-box;
+          color: #ffffff;
+          
+          .title {
+            position: absolute;
+            top: 80px;
+            left: 40px;
+            font-size: 70px;
+          }
+  
+          .content {
+            max-width: 165px;
+            text-align: center;
+            transition: all .5s;
+          }
+        }
+        &__mask {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -2;
+          background-color: rgba($color: #000000, $alpha: 0.7);
+          transition: all .5s;
+        }
+        &__bg {
+          img {
+            width: auto;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -3;
+            -webkit-filter:grayscale(1);
+          }
+        }
+      }
+    }
+  }
+}
