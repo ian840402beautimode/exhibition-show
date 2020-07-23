@@ -1,0 +1,40 @@
+<svg id="BUTTON_" data-name="BUTTON " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="303" height="317" viewBox="0 0 303 317">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-width: 0.06px;
+        fill-rule: evenodd;
+      }
+
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        opacity: 0.5;
+      }
+
+      .cls-3 {
+        opacity: 0.3;
+      }
+    </style>
+    <filter id="filter" x="-6" y="-13" width="316" height="342" filterUnits="userSpaceOnUse">
+      <feGaussianBlur result="blur" stdDeviation="24.667" in="SourceAlpha"/>
+      <feComposite result="composite"/>
+      <feComposite result="composite-2"/>
+      <feComposite result="composite-3"/>
+      <feFlood result="flood" flood-color="#ffc835" flood-opacity="0.48"/>
+      <feComposite result="composite-4" operator="in" in2="composite-3"/>
+      <feBlend result="blend" mode="screen" in2="SourceGraphic"/>
+      <feBlend result="blend-2" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g style="fill: #fff; filter: url(#filter)">
+    <path id="光暈_1_" data-name="光暈 1 " class="cls-1" d="M151.5,62.5L234,110.125v95.25L151.5,253,69,205.375v-95.25Z" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use xlink:href="#光暈_1_" style="stroke: #fff; filter: none; fill: none"/>
+  <path id="BUTTON_2" data-name="BUTTON  2" class="cls-2" d="M150.749,52L241.5,104.5v105L150.749,262,60,209.5v-105Z"/>
+  <path id="BUTTON_3" data-name="BUTTON 3" class="cls-3" d="M150.749,41.5L250.5,99.25v115.5L150.749,272.5,51,214.751V99.25Z"/>
+</svg>
