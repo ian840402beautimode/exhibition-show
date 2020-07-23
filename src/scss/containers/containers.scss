@@ -10,6 +10,17 @@
   overflow: hidden;
   position: relative;
 
+  #stats {
+    display: none;
+  }
+
+  #bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
   .main-menu {
     position: absolute;
     top: 0;

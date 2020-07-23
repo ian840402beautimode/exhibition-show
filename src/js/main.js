@@ -1,3 +1,4 @@
+import './bg'
 import './main-menu'
 import './exhibition-area'
 
