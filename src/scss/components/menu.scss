@@ -74,7 +74,6 @@
   }
 
   .menu-mask {
-    display: none;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -82,9 +81,12 @@
     right: 0;
     z-index: -10;
     background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: all 1s;
+    pointer-events: none;
 
     &.open {
-      display: block;
+      opacity: 1;
     }
   }
 }

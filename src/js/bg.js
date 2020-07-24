@@ -15,7 +15,6 @@ let windowHalfX = window.innerWidth / 2
 let windowHalfY = window.innerHeight / 2
 let objLoader = new OBJLoader2();
 let sideSilver, sideGold
-let box
 
 //* 初始化 stats
 function initStats() {
@@ -30,7 +29,7 @@ const textureLoader = new THREE.TextureLoader();
 // 初始化場景、渲染器、相機、物體
 function init() {
 
-  const amount = 2000 // 數量
+  const amount = 3000 // 數量
 
   //* 材質貼圖
   sideSilver = textureLoader.load('/Textures/bump01.jpg')
@@ -59,7 +58,7 @@ function init() {
     0.1,
     10000
   )
-  camera.position.set(90, 10, 90)
+  camera.position.set(10, 10, 10)
   camera.lookAt(scene.position)
 
   //* 控制器 & stats
@@ -113,12 +112,6 @@ function init() {
 
 
   //* 光源
-
-  // 設置環境光 AmbientLight
-  // let ambientLight = new THREE.AmbientLight(0xffffff)
-  // scene.add(ambientLight)
-
-
   //建立點光源
   pointLight = new THREE.PointLight(0xcfc8ba, 5, 200)  // 繞光
   pointLight.position.set(200, 10, 200)
@@ -133,11 +126,11 @@ function init() {
   pointLight3.position.set(0, 120, 0)
   pointLight3.castShadow = true
 
-  let pointLight4 = new THREE.PointLight(0xffffff, 1, 150) // 下
+  let pointLight4 = new THREE.PointLight(0xffffff, 2, 150) // 下
   pointLight4.position.set(0, -120, 0)
   pointLight4.castShadow = true
 
-  let pointLight5 = new THREE.PointLight(0xcfc8ba, 4, 150)  // 左前
+  let pointLight5 = new THREE.PointLight(0xcfc8ba, 5, 150)  // 左前
   pointLight5.position.set(0, 0, 120)
   pointLight5.castShadow = true
 
@@ -145,7 +138,7 @@ function init() {
   pointLight6.position.set(120, 0, 0)
   pointLight6.castShadow = true
 
-  let pointLight7 = new THREE.PointLight(0xcfc8ba, 2, 150)  // 右前
+  let pointLight7 = new THREE.PointLight(0xcfc8ba, 2, 150)  // 右後下
   pointLight6.position.set(0, -100, -120)
   pointLight6.castShadow = true
   
@@ -202,8 +195,14 @@ function animate() {
 // 渲染場景
 function render() {
   // console.log(Date.now())
-  camera.position.x += ( mouseX - camera.position.x ) * 0.0001;
-	camera.position.y += ( - mouseY - camera.position.y ) * 0.0001;
+
+  if (mouseX > 0) {
+    camera.position.x += ( mouseX - camera.position.x ) * 0.00003;
+  } else {
+    camera.position.x += ( mouseX - camera.position.x ) * 0.00001;
+  }
+
+	camera.position.y += ( - mouseY - camera.position.y ) * 0.00005;
   animate()
   pointLightAnimation()
   statsUI.update()
@@ -214,10 +213,8 @@ function render() {
 
 // 滑鼠移動事件
 function onDocumentMouseMove( event ) {
-
   mouseX = event.clientX - windowHalfX;
   mouseY = event.clientY - windowHalfY;
-
 }
 
 // 監聽螢幕寬高來做簡單 RWD 設定
@@ -227,7 +224,7 @@ window.addEventListener('resize', function() {
   renderer.setSize(window.innerWidth, window.innerHeight)
 })
 
-// document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 init()
 render()
