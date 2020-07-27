@@ -10,21 +10,22 @@ html(lang="en")
       #webGl
       nav.main-menu-block
         include block/menu.pug
-      .main-content-wrapper
-        //- .main-area
-        //-   include block/main.pug
-        //- .content-area
-        //-   include block/information.pug
-        //- .content-area
-        //-   include block/area.pug
-        //- .content-area
-        //-   include block/list.pug
-        //- .content-area
-        //-   include block/event.pug
-        //- .content-area
-        //-   include block/channel.pug
-        //- .content-area
-        //-   include block/preview.pug
+      .main-content-wrapper#content-window
+        .main-area
+          include block/main.pug
+        .content-area
+          include block/information.pug
+        .content-area
+          include block/area.pug
+        .content-area
+          include block/list.pug
+        .content-area
+          include block/event.pug
+        .content-area
+          include block/channel.pug
+        .content-area
+          include block/preview.pug
         //- .special-area
         //-   include block/exhibition-area.pug
         //- include block/exhibition-event.pug
+      include block/progress.pug

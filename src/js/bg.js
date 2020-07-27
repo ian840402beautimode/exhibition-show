@@ -3,7 +3,7 @@ import { OBJLoader2 } from "three/examples/jsm/loaders/OBJLoader2.js";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'stats-js'
 
-const bgDom = document.querySelector('#bg')
+const bgDom = document.querySelector('#webGl')
 
 let scene, renderer, camera, controls, axes, statsUI
 let pointLight, pointLight2
@@ -20,7 +20,7 @@ let sideSilver, sideGold
 function initStats() {
   const stats = new Stats()
   stats.setMode(0) // FPS mode
-  document.getElementById('webGl').appendChild(stats.dom)
+  document.getElementById('stats').appendChild(stats.dom)
   return stats
 }
 

@@ -38,6 +38,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     contentBase: path.join(__dirname, 'static'),
+    host: '0.0.0.0',
     port: 8088,
     open: true,
   },
