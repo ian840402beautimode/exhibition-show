@@ -20,7 +20,7 @@ let sideSilver, sideGold
 function initStats() {
   const stats = new Stats()
   stats.setMode(0) // FPS mode
-  document.getElementById('stats').appendChild(stats.dom)
+  document.getElementById('webGl').appendChild(stats.dom)
   return stats
 }
 

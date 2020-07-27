@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  .content {
+  .content-wrap {
     position: relative;
     &__image {
       width: 700px;
@@ -55,6 +55,16 @@
           left: 0px;
         }
       }
+    }
+  }
+  .content-bg {
+    position: relative;
+    .bg-hex {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 }
