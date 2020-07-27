@@ -7,11 +7,12 @@
     cursor: pointer;
   }
   .menu-wrap {
-    display: none;
+    display: block;
     padding-top: 75px;
     position: absolute;
     top: 130px;
     right: 80px;
+    pointer-events: none;
     
     &::before {
       content: '';
@@ -23,17 +24,20 @@
       position: absolute;
       top: 0;
       right: 0;
+      opacity: 0;
+      transition: all .5s;
     }
 
     &::after {
       content: '';
       display: block;
       width: 3px;
-      height: 775px;
+      height: 0px;
       background-color: #ffffff;
       position: absolute;
       top: 5px;
       right: 5px;
+      transition: all .5s;
     }
 
     .menu-list {
@@ -48,6 +52,7 @@
         margin-bottom: 75px;
         position: relative;
         cursor: pointer;
+        opacity: 0;
         transition: all .3s;
 
         &:hover {
@@ -61,13 +66,72 @@
         &::after {
           content: '';
           display: block;
-          width: 8px;
-          height: 8px;
+          width: 0px;
+          height: 0px;
           border-radius: 50%;
           background-color: #ffffff;
           position: absolute;
           top: 20px;
           right: -27px;
+          transition: all .5s;
+        }
+
+        &:nth-child(1) {
+          transition-delay: .6s;
+        }
+        &:nth-child(2) {
+          transition-delay: .5s;
+        }
+        &:nth-child(3) {
+          transition-delay: .4s;
+        }
+        &:nth-child(4) {
+          transition-delay: .3s;
+        }
+        &:nth-child(5) {
+          transition-delay: .2s;
+        }
+        &:nth-child(6) {
+          transition-delay: .1s;
+        }
+      }
+    }
+
+    &.open {
+      pointer-events: unset;
+      &::before {
+        opacity: 1;
+      }
+      &::after {
+        height: 775px;
+      }
+      .menu-list {
+        &__items {
+          opacity: 1;
+
+          &::after {
+            width: 8px;
+            height: 8px;
+          }
+
+          &:nth-child(1) {
+            transition-delay: .1s;
+          }
+          &:nth-child(2) {
+            transition-delay: .2s;
+          }
+          &:nth-child(3) {
+            transition-delay: .3s;
+          }
+          &:nth-child(4) {
+            transition-delay: .4s;
+          }
+          &:nth-child(5) {
+            transition-delay: .5s;
+          }
+          &:nth-child(6) {
+            transition-delay: .6s;
+          }
         }
       }
     }
@@ -87,6 +151,7 @@
 
     &.open {
       opacity: 1;
+      pointer-events: unset;
     }
   }
 }

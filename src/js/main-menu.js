@@ -1,4 +1,4 @@
 $('#menu-btn').on('click', function (e) {
-  $('.menu-wrap').slideToggle()
+  $('.menu-wrap').toggleClass('open')
   $('.menu-mask').toggleClass('open')
 })
