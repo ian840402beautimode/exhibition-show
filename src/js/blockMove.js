@@ -1,8 +1,8 @@
 let windowWidth = window.innerWidth
 let windowHeight = window.innerHeight
-let basicWidth = windowWidth * 1.5
+let basicWidth = windowWidth >= 1024 ? windowWidth * 1.5 : windowHeight * 2
 const degree60 = Math.PI / 3
-const offsetY = 0
+const offsetY = -windowHeight
 
 let hexCoordinate = []
 let nowBlock = 0
@@ -11,41 +11,44 @@ let nowBlock = 0
 const getHexCoordinate = () => {
   const hexAngle1 = {
     x: basicWidth,
-    y: 0,
+    y: 0 - offsetY,
   }
 
   const hexAngle2 = {
     x: hexAngle1.x + basicWidth * Math.cos(degree60),
-    y: 0 - basicWidth * Math.sin(degree60),
+    y: 0 - basicWidth * Math.sin(degree60) - offsetY,
   }
 
   const hexAngle3 = {
     x: (2 * hexAngle1.x) + (basicWidth * Math.cos(degree60)),
-    y: 0 - basicWidth * Math.sin(degree60),
+    y: 0 - basicWidth * Math.sin(degree60) - offsetY,
   }
 
   const hexAngle4 = {
     x: (2 * basicWidth) + (2 * basicWidth * Math.cos(degree60)),
-    y: 0,
+    y: 0 - offsetY,
   }
 
   const hexAngle5 = {
     x: hexAngle1.x + (basicWidth * Math.cos(degree60)),
-    y: basicWidth * Math.sin(degree60),
+    y: basicWidth * Math.sin(degree60) - offsetY,
   }  
 
   const hexAngle6 = {
     x: (2 * hexAngle1.x) + (basicWidth * Math.cos(degree60)),
-    y: basicWidth * Math.sin(degree60),
+    y: basicWidth * Math.sin(degree60) - offsetY,
   }
 
   hexCoordinate = [hexAngle2, hexAngle3, hexAngle4, hexAngle6, hexAngle5, hexAngle1]
 
   $('.content-area').each(function (index, item) {
     $(item).css({
-      'transform': `translate(${hexCoordinate[index].x}px, ${hexCoordinate[index].y + offsetY}px)`
+      'opacity' : 1,
+      'transform': `translate(${hexCoordinate[index].x}px, ${hexCoordinate[index].y}px)`
     })
   })
+
+  console.log(hexCoordinate)
 }
 
 getHexCoordinate()
@@ -85,10 +88,16 @@ const blockMove = (dest) => {
 
     nowBlock = dest
 
-    $('#progress-block').find('.progress-now ').text('0' + nowBlock)
+    $('#progress-block').find('.progress-now').text('0' + nowBlock)
     $('#progress-block').find('.line-item').css({
       'width': `${(100 / 6) * nowBlock}%`
     })
+
+    if (nowBlock === 6) {
+      $('#progress-block').find('.progress-end').addClass('all')
+    } else {
+      $('#progress-block').find('.progress-end').removeClass('all')
+    }
   }
   if (nowBlock > 0) {
     $('.main-menu-block').fadeIn()
@@ -113,14 +122,15 @@ $('.menu-list__items').on('click', function (e) {
 })
 
 window.addEventListener('resize', function() {
-  console.log('resize')
   windowWidth = window.innerWidth
   windowHeight = window.innerHeight
   basicWidth = windowWidth * 1.5
 
   getHexCoordinate()
 
-  $('#content-window').css({
-    'transform': `translate(-${hexCoordinate[nowBlock - 1].x}px, ${-hexCoordinate[nowBlock - 1].y}px)`
-  })
+  if (nowBlock > 0) {
+    $('#content-window').css({
+      'transform': `translate(-${hexCoordinate[nowBlock - 1].x}px, ${-hexCoordinate[nowBlock - 1].y}px)`
+    })
+  }
 })

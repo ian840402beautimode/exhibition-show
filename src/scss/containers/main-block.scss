@@ -194,6 +194,10 @@
           left: 50%;
           margin-top: -1800px;
           margin-left: -1800px;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
     }

@@ -11,22 +11,22 @@ html(lang="en")
       nav.main-menu-block
         include block/menu.pug
       .main-content-wrapper#content-window
-        //- .main-area
-        //-   include block/main.pug
-        //- .content-area#hexAngle1
-        //-   include block/information.pug
-        //- .content-area#hexAngle2
-        //-   include block/area.pug
-        //- .content-area#hexAngle3
-        //-   include block/list.pug
-        //- .content-area#hexAngle4
-        //-   include block/event.pug
-        //- .content-area#hexAngle5
-        //-   include block/channel.pug
-        //- .content-area#hexAngle6
-        //-   include block/preview.pug
-        .special-area
-          include block/exhibition-area.pug
-        //- .special-area
-        //-   include block/exhibition-event.pug
+        .main-area
+          include block/main.pug
+        .content-area#hexAngle1
+          include block/information.pug
+        .content-area#hexAngle2
+          include block/area.pug
+        .content-area#hexAngle3
+          include block/list.pug
+        .content-area#hexAngle4
+          include block/event.pug
+        .content-area#hexAngle5
+          include block/channel.pug
+        .content-area#hexAngle6
+          include block/preview.pug
+      #special-area-block
+        include block/exhibition-area.pug
+      #special-event-block
+        include block/exhibition-event.pug
       include block/progress.pug

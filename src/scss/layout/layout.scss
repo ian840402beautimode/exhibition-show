@@ -33,6 +33,20 @@
     box-sizing: border-box;
     transition: all .5s;
     z-index: 10;
+    opacity: 1;
+
+    &.hide {
+      opacity: 0;
+    }
+
+    #bg-line {
+      width: 100vw;
+      height: 3px;
+      background-color: #ffffff;
+      position: absolute;
+      z-index: 5;
+    }
+    
     .main-area {
       position: relative;
       height: 100%;
@@ -48,16 +62,17 @@
       top: 0;
       left: 0;
       z-index: 10;
+      opacity: 0;
     }
-  
-    .special-area {
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 100;
-    }
+  }
+
+  #special-area-block, #special-event-block {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
   }
 }

@@ -1,3 +1,21 @@
+@keyframes eventBlockRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .exhibition-event-block {
   width: 100%;
   height: 100%;
@@ -74,7 +92,7 @@
           &__content {
             width: 100%;
             position: relative;
-            background-color: rgba($color: #000000, $alpha: 0.7);
+            // background-color: rgba($color: #000000, $alpha: 0.7);
             .text {
               display: flex;
               justify-content: center;
@@ -98,11 +116,16 @@
             }
             .bg {
               width: 100%;
+              transition: all .5s;
 
               &.hover {
                 position: absolute;
                 top: 0;
                 left: 0;
+
+                &:hover {
+                  animation: eventBlockRotate .3s infinite;
+                }
               }
               
               img {
