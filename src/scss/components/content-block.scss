@@ -32,7 +32,7 @@
         }
 
         @media (max-width: 600px) {
-          padding: 0 5% 20px 0;
+          padding: 0 5% 0px 0;
         }
 
       }
@@ -56,6 +56,7 @@
         @media (max-width: 600px) {
           width: 180px;
           height: 180px;
+          margin-right: -10px;
         }
         
         &:hover {
@@ -115,6 +116,10 @@
           font-size: 36px;
           padding: 0;
         }
+
+        @media (max-width: 480px) {
+          margin-top: -5%;
+        }
       }
     }
   }
@@ -161,10 +166,10 @@
         }
 
         @media (min-width: 320px) and (max-width: 400px) {
-          width: 370px;
-          height: 322px;
-          top: -280px;
-          left: -190px;
+          width: 300px;
+          height: 261px;
+          top: -255px;
+          left: -180px;      
         }
       }
 
@@ -200,10 +205,10 @@
         }
 
         @media (min-width: 320px) and (max-width: 400px) {
-          width: 450px;
-          height: 348px;
-          top: -320px;
-          left: -225px;
+          width: 380px;
+          height: 330px;
+          top: -295px;
+          left: -195px;
         }
       }
     }

@@ -26,7 +26,8 @@
   .content-wrap {
     .content {
       &__image {
-        transform: rotate(-2deg);
+        // transform: rotate(-2deg);
+        animation: infoHexMove2 25s infinite linear;
       }
       &__text {
         transform: rotate(-5deg);
@@ -35,6 +36,10 @@
         .btn-link {
           .btn-bg {
             transform: rotate(10deg);
+
+            @media (max-width: 480px) {
+              transform: rotate(-10deg);
+            }
           }
         }
       }

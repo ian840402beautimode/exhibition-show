@@ -35,6 +35,10 @@
         .btn-link {
           .btn-bg {
             transform: rotate(10deg);
+
+            @media (max-width: 480px) {
+              transform: rotate(-10deg);
+            }
           }
         }
       }

@@ -67,6 +67,11 @@
           right: -30px;
         }
 
+        @media (max-width: 480px) {
+          bottom: -250px;
+          right: -30px;
+        }
+
         #first-btn {
           display: flex;
           justify-content: center;

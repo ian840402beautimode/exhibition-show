@@ -124,7 +124,7 @@ $('.menu-list__items').on('click', function (e) {
 window.addEventListener('resize', function() {
   windowWidth = window.innerWidth
   windowHeight = window.innerHeight
-  basicWidth = windowWidth * 1.5
+  basicWidth = windowWidth >= 1024 ? windowWidth * 1.5 : windowHeight * 2
 
   getHexCoordinate()
 
