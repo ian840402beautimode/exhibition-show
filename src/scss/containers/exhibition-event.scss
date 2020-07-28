@@ -1,0 +1,129 @@
+.exhibition-event-block {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  #event-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    z-index: 10;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all .8s ease-out;
+
+    @media (max-width: 700px) {
+      top: 15px;
+      right: 15px;
+    }
+
+    &:hover {
+      transform: rotate(540deg);
+    }
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .event-progress {
+    width: 100%;
+    height: 100%;
+    .event-progress-list {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+      max-width: 1780px;
+      width: 100%;
+      height: 100%;
+      padding: 100px 30px;
+      box-sizing: border-box;
+      margin: 0 auto;
+
+      @media (max-width: 700px) {
+        padding: 30px 15px;
+      }
+
+      &__items {
+        flex-basis: 20%;
+        max-width: 20%;
+        width: 100%;
+        padding: 0px 15px;
+        box-sizing: border-box;
+
+        @media (min-width: 701px) and (max-width: 1440px) {
+          flex-basis: 33.33%;
+          max-width: 270px;
+        }
+
+        @media (max-width: 700px) {
+          flex-basis: 50%;
+          max-width: 200px;
+        }
+
+        .item {
+          display: block;
+          width: 100%;
+          &__content {
+            width: 100%;
+            position: relative;
+            background-color: rgba($color: #000000, $alpha: 0.7);
+            .text {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              width: 100%;
+              height: 100%;
+              font-size: 26px;
+              color: #d6b05d;
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              @media (max-width: 1700px) {
+                font-size: 20px;
+              }
+
+              @media (max-width: 700px) {
+                font-size: 12px;
+              }
+            }
+            .bg {
+              width: 100%;
+
+              &.hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+              
+              img {
+                width: 100%;
+              }
+            }
+          }
+          &__month {
+            font-size: 40px;
+            font-style: italic;
+            font-weight: bolder;
+            color: #ffffff;
+            text-align: center;
+            margin: 10px 0px;
+
+            @media (max-width: 1024px) {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

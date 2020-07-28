@@ -13,8 +13,8 @@ html(lang="en")
       .main-content-wrapper#content-window
         //- .main-area
         //-   include block/main.pug
-        .content-area#hexAngle1
-          include block/information.pug
+        //- .content-area#hexAngle1
+        //-   include block/information.pug
         //- .content-area#hexAngle2
         //-   include block/area.pug
         //- .content-area#hexAngle3
@@ -27,5 +27,6 @@ html(lang="en")
         //-   include block/preview.pug
         //- .special-area
         //-   include block/exhibition-area.pug
-        //- include block/exhibition-event.pug
+        .special-area
+          include block/exhibition-event.pug
       include block/progress.pug
