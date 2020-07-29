@@ -26,20 +26,15 @@
   .content-wrap {
     .content {
       &__image {
-        // transform: rotate(-2deg);
         animation: infoHexMove2 25s infinite linear;
       }
       &__text {
-        transform: rotate(-5deg);
+        animation: infoHexMove1 15s infinite linear;
       }
       &__btn {
         .btn-link {
           .btn-bg {
-            transform: rotate(10deg);
-
-            @media (max-width: 480px) {
-              transform: rotate(-10deg);
-            }
+            transform: rotate(-10deg);
           }
         }
       }

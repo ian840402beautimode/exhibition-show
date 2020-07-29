@@ -26,10 +26,10 @@
   .content-wrap {
     .content {
       &__image {
-        transform: rotate(-2deg);
+        animation: channelHexMove2 25s infinite linear;
       }
       &__text {
-        transform: rotate(-5deg);
+        animation: channelHexMove1 15s infinite linear;
       }
       &__btn {
         .btn-link {

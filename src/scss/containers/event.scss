@@ -26,10 +26,16 @@
   .content-wrap {
     .content {
       &__image {
-        transform: rotate(-2deg);
+        animation: eventHexMove2 25s infinite linear;
       }
       &__text {
-        transform: rotate(-5deg);
+        padding-top: 55px;
+        padding-left: 115px;
+        animation: eventHexMove1 15s infinite linear;
+        @media (max-width: 1440px) {
+          padding-top: unset;
+          padding-left: unset;
+        }
       }
       &__btn {
         .btn-link {

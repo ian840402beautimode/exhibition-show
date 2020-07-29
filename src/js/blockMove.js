@@ -12,6 +12,11 @@ let scrollLoading = false
 
 // 取得六邊型區塊座標與定位
 const getHexCoordinate = () => {
+  const startPosition = {
+    x: 0,
+    y: 0
+  }
+
   const hexAngle1 = {
     x: basicWidth,
     y: 0 - offsetY,
@@ -42,17 +47,15 @@ const getHexCoordinate = () => {
     y: basicWidth * Math.sin(degree60) - offsetY,
   }
 
-  hexCoordinate = [hexAngle2, hexAngle3, hexAngle4, hexAngle6, hexAngle5, hexAngle1]
+  hexCoordinate = [startPosition, hexAngle2, hexAngle3, hexAngle4, hexAngle6, hexAngle5, hexAngle1]
 
   $('.content-area').each(function (index, item) {
     $(item).css({
       'opacity' : 1,
-      'transform': `translate(${hexCoordinate[index].x}px, ${hexCoordinate[index].y}px)`
+      'transform': `translate(${hexCoordinate[index+1].x}px, ${hexCoordinate[index+1].y}px)`
     })
   })
 }
-
-getHexCoordinate()
 
 // 上一個區塊
 const blockPrev = (dest) => {
@@ -60,7 +63,7 @@ const blockPrev = (dest) => {
   for (let i = start; i > dest; i--) {
     setTimeout(() => {
       $('#content-window').css({
-        'transform': `translate(-${hexCoordinate[i - 2].x}px, ${-hexCoordinate[i - 2].y}px)`
+        'transform': `translate(-${hexCoordinate[i - 1].x}px, ${-hexCoordinate[i - 1].y}px)`
       })
       lineMove(i - 1)
     }, 500 * -(i - start))
@@ -73,7 +76,7 @@ const blockNext = (dest) => {
   for (let i = start; i < dest; i++) {
     setTimeout(() => {
       $('#content-window').css({
-        'transform': `translate(-${hexCoordinate[i].x}px, ${-hexCoordinate[i].y}px)`
+        'transform': `translate(-${hexCoordinate[i + 1].x}px, ${-hexCoordinate[i + 1].y}px)`
       })
       lineMove(i + 1)
     }, 500 * (i - start))
@@ -82,34 +85,45 @@ const blockNext = (dest) => {
 
 const lineMove = (dest) => {
   switch (dest) {
+    case 0:
+      $('#bg-line').css({
+        'opacity': 0,
+        'transform': 'rotate(-30deg)'
+      })
+      break
     case 1:
+      $('#bg-line').css({
+        'opacity': 0.4,
+        'transform': 'rotate(-30deg)'
+      })
+      break
     case 2:
       $('#bg-line').css({
-        'opacity': 1,
+        'opacity': 0.4,
         'transform': 'rotate(0deg)'
       })
       break
     case 3:
       $('#bg-line').css({
-        'opacity': 1,
+        'opacity': 0.4,
         'transform': 'rotate(60deg)'
       })
       break
     case 4:
       $('#bg-line').css({
-        'opacity': 1,
+        'opacity': 0.4,
         'transform': 'rotate(120deg)'
       })
       break
     case 5:
       $('#bg-line').css({
-        'opacity': 1,
+        'opacity': 0.4,
         'transform': 'rotate(180deg)'
       })
       break
     case 6:
       $('#bg-line').css({
-        'opacity': 1,
+        'opacity': 0.4,
         'transform': 'rotate(240deg)'
       })
       break
@@ -118,7 +132,7 @@ const lineMove = (dest) => {
 
 // 區塊移動
 const blockMove = (dest) => {
-  if (dest > 0 && dest <= 6) {
+  if (dest >= 0 && dest <= 6) {
     if (dest > nowBlock) {
       blockNext(dest)
     } else if (dest < nowBlock) {
@@ -147,6 +161,9 @@ const blockMove = (dest) => {
   }
 }
 
+// 初始化狀態
+getHexCoordinate()
+
 // 第一個按鈕
 $('#first-btn').on('click', function (e) {
   blockMove(1)
@@ -170,23 +187,23 @@ window.addEventListener('resize', function() {
 
   if (nowBlock > 0) {
     $('#content-window').css({
-      'transform': `translate(-${hexCoordinate[nowBlock - 1].x}px, ${-hexCoordinate[nowBlock - 1].y}px)`
+      'transform': `translate(-${hexCoordinate[nowBlock].x}px, ${-hexCoordinate[nowBlock].y}px)`
     })
   }
 })
 
 
 // 滾輪事件
-document.addEventListener('wheel', (e) => {
+document.querySelector('#content-window').addEventListener('wheel', (e) => {
   const isScrollingDown = Math.sign(e.wheelDeltaY)
   if (!scrollLoading && e.wheelDeltaY < 10 && e.wheelDeltaY > -10) {
     scrollLoading = true
     if (isScrollingDown < 0) {
-      if (nowBlock >= 1 && nowBlock < 6) {
+      if (nowBlock >= 0 && nowBlock < 6) {
         blockMove(nowBlock + 1)
       }
     } else if (isScrollingDown > 0) {
-      if (nowBlock > 1 && nowBlock <= 6) {
+      if (nowBlock >= 1 && nowBlock <= 6) {
         blockMove(nowBlock - 1)
       }
     }

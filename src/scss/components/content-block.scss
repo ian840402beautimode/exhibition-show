@@ -73,10 +73,12 @@
           cursor: pointer;
           
           .btn-text {
-            font-size: 16px;
+            font-size: 20px;
             color: #ffb931;
             position: relative;
             z-index: 1;
+            margin-top: -14px;
+            letter-spacing: 2px;
           }
           
           .btn-bg {
@@ -91,11 +93,13 @@
       &__text {
         font-size: 90px;
         line-height: 1.2;
+        letter-spacing: 5px;
         font-weight: bolder;
         color: #ffffff;
         position: absolute;
         top: 170px;
         left: 70px;
+        font-family: MontserratBold;
     
         @media (min-width: 1025px) and (max-width: 1440px) {
           top: 250px;

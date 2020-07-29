@@ -26,7 +26,7 @@
   .content-wrap {
     .content {
       &__image {
-        transform: rotate(-2deg);
+        animation: listHexMove2 25s infinite linear;
       }
       &__text {
         transform: rotate(-5deg);
