@@ -5,10 +5,10 @@
   right: 30px;
   z-index: 20;
 
-  @media (max-width: 480px) {
-    bottom: 20px;
-    right: 30px;
-  }
+  // @media (max-width: 480px) {
+  //   bottom: 20px;
+  //   right: 30px;
+  // }
 
   .progress-wrapper {
     display: flex;
@@ -17,9 +17,9 @@
     letter-spacing: 1px;
     color: #ffffff;
 
-    @media (max-width: 480px) {
-      font-size: 12px;
-    }
+    // @media (max-width: 480px) {
+    //   font-size: 12px;
+    // }
     
     .progress-line {
       width: 160px;
@@ -27,11 +27,11 @@
       background-color: #3e3e3e;
       margin: 0px 20px;
 
-      @media (max-width: 480px) {
-        width: 100px;
-        height: 1px;
-        margin: 0px 10px;
-      }
+      // @media (max-width: 480px) {
+      //   width: 100px;
+      //   height: 1px;
+      //   margin: 0px 10px;
+      // }
 
       .line-item {
         content: '';
