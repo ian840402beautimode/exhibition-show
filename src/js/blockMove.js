@@ -62,6 +62,7 @@ const blockPrev = (dest) => {
       $('#content-window').css({
         'transform': `translate(-${hexCoordinate[i - 2].x}px, ${-hexCoordinate[i - 2].y}px)`
       })
+      lineMove(i - 1)
     }, 500 * -(i - start))
   }
 }
@@ -74,7 +75,44 @@ const blockNext = (dest) => {
       $('#content-window').css({
         'transform': `translate(-${hexCoordinate[i].x}px, ${-hexCoordinate[i].y}px)`
       })
+      lineMove(i + 1)
     }, 500 * (i - start))
+  }
+}
+
+const lineMove = (dest) => {
+  switch (dest) {
+    case 1:
+    case 2:
+      $('#bg-line').css({
+        'opacity': 1,
+        'transform': 'rotate(0deg)'
+      })
+      break
+    case 3:
+      $('#bg-line').css({
+        'opacity': 1,
+        'transform': 'rotate(60deg)'
+      })
+      break
+    case 4:
+      $('#bg-line').css({
+        'opacity': 1,
+        'transform': 'rotate(120deg)'
+      })
+      break
+    case 5:
+      $('#bg-line').css({
+        'opacity': 1,
+        'transform': 'rotate(180deg)'
+      })
+      break
+    case 6:
+      $('#bg-line').css({
+        'opacity': 1,
+        'transform': 'rotate(240deg)'
+      })
+      break
   }
 }
 

@@ -16,6 +16,10 @@
     font-size: 18px;
     letter-spacing: 1px;
     color: #ffffff;
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
     
     .progress-line {
       width: 160px;
@@ -38,20 +42,12 @@
       }
     }
 
-    .progress {
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-      letter-spacing: 1px;
-      color: #ffffff;
-      margin: 0px 10px;
+    .progress-end {
+      color: #3e3e3e;
+      transition: all .3s;
 
-      @media (max-width: 480px) {
-        font-size: 12px;
-      }
-
-      .middle {
-        margin: 0px 5px;
+      &.all {
+        color: #ffffff;
       }
     }
   }

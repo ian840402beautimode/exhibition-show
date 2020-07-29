@@ -2,7 +2,6 @@
   width: 100vw;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
-  background-color: black;
   overflow: hidden;
   position: relative;
 
@@ -18,12 +17,25 @@
   }
 
   .main-menu-block {
-    display: block;
+    display: none;
     height: 100%;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 50;
+  }
+
+  #bg-line {
+    width: 200vh;
+    height: 1px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 50vh;
+    left: 0;
+    z-index: 5;
+    opacity: 0;
+    transform: rotate(-30deg);
+    transition: all .5s;
   }
 
   .main-content-wrapper {
@@ -38,14 +50,6 @@
 
     &.hide {
       opacity: 0;
-    }
-
-    #bg-line {
-      width: 100vw;
-      height: 3px;
-      background-color: #ffffff;
-      position: absolute;
-      z-index: 5;
     }
     
     .main-area {
