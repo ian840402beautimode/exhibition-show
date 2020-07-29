@@ -60,7 +60,11 @@
         // }
         
         &:hover {
-          transform: scale(1.1);
+          .btn-link {
+            .btn-bg {
+              transform: rotate(-10deg) scale(1.1) !important;
+            }
+          }
         }
         
         .btn-link {
@@ -87,6 +91,7 @@
             position: absolute;
             top: 0px;
             left: 0px;
+            transition: all .5s;
           }
         }
       }

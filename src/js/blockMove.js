@@ -196,7 +196,7 @@ window.addEventListener('resize', function() {
 // 滾輪事件
 document.querySelector('#content-window').addEventListener('wheel', (e) => {
   const isScrollingDown = Math.sign(e.wheelDeltaY)
-  if (!scrollLoading && e.wheelDeltaY < 10 && e.wheelDeltaY > -10) {
+  if (!scrollLoading) {
     scrollLoading = true
     if (isScrollingDown < 0) {
       if (nowBlock >= 0 && nowBlock < 6) {
