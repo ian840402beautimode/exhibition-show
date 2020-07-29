@@ -73,7 +73,7 @@ module.exports = {
                 options: { 
                     name: "[path][name].[ext]",
                     context: "src",     // 處理圖片巢狀資料夾結構
-                    limit: 1024
+                    limit: 2048
                 }
             }
         },
@@ -83,7 +83,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: { 
                     name: "fonts/[name].[ext]",
-                    limit: 1024
+                    limit: 2048
                 }
             }
         },

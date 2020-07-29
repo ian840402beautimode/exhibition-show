@@ -6,6 +6,9 @@ const offsetY = -windowHeight
 
 let hexCoordinate = []
 let nowBlock = 0
+let scrollLoading = false
+
+
 
 // 取得六邊型區塊座標與定位
 const getHexCoordinate = () => {
@@ -47,8 +50,6 @@ const getHexCoordinate = () => {
       'transform': `translate(${hexCoordinate[index].x}px, ${hexCoordinate[index].y}px)`
     })
   })
-
-  console.log(hexCoordinate)
 }
 
 getHexCoordinate()
@@ -121,6 +122,7 @@ $('.menu-list__items').on('click', function (e) {
   $('.menu-mask').removeClass('open')
 })
 
+// RWD
 window.addEventListener('resize', function() {
   windowWidth = window.innerWidth
   windowHeight = window.innerHeight
@@ -132,5 +134,26 @@ window.addEventListener('resize', function() {
     $('#content-window').css({
       'transform': `translate(-${hexCoordinate[nowBlock - 1].x}px, ${-hexCoordinate[nowBlock - 1].y}px)`
     })
+  }
+})
+
+
+// 滾輪事件
+document.addEventListener('wheel', (e) => {
+  const isScrollingDown = Math.sign(e.wheelDeltaY)
+  if (!scrollLoading && e.wheelDeltaY < 10 && e.wheelDeltaY > -10) {
+    scrollLoading = true
+    if (isScrollingDown < 0) {
+      if (nowBlock >= 1 && nowBlock < 6) {
+        blockMove(nowBlock + 1)
+      }
+    } else if (isScrollingDown > 0) {
+      if (nowBlock > 1 && nowBlock <= 6) {
+        blockMove(nowBlock - 1)
+      }
+    }
+    setTimeout(() => {
+      scrollLoading = false
+    }, 500)
   }
 })
