@@ -69,14 +69,20 @@ module.exports = {
         },
         {
             test: /\.(gif|png|jpe?g|svg)$/i,
-            use: {
+            use: [{
                 loader: 'url-loader',
                 options: { 
                     name: "[path][name].[ext]",
                     context: "src",     // 處理圖片巢狀資料夾結構
                     limit: 1024
                 }
-            }
+            },
+            {
+                loader: 'image-webpack-loader',
+                options: {
+                  bypassOnDebug: true,
+                }
+            }],
         },
         {
             test: /\.(woff|woff2|ttc|ttf|otf)$/i,
