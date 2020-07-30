@@ -15,9 +15,9 @@ fs.readdirSync('./src/pug').forEach(function(elementName) {
             new HtmlWebpackPlugin({
                 template: `./src/pug/${ elementName }`,
                 filename: `./${ array[0]}.html`,
-                minify: {
-                    collapseWhitespace: false,
-                },
+                // minify: {
+                //     collapseWhitespace: false,
+                // },
             })
         )
     }
@@ -73,7 +73,7 @@ module.exports = {
                 options: { 
                     name: "[path][name].[ext]",
                     context: "src",     // 處理圖片巢狀資料夾結構
-                    limit: 2048
+                    limit: 1024
                 }
             }
         },
@@ -83,7 +83,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: { 
                     name: "fonts/[name].[ext]",
-                    limit: 2048
+                    limit: 1024
                 }
             }
         },
