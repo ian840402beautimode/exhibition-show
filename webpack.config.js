@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const fs = require('fs');
 let PugFiles = [];
@@ -96,6 +97,11 @@ module.exports = {
             '**/*'
         ],
     }),
+    new CopyWebpackPlugin([
+        { from: './static/Textures', to: './Texture' },
+        { from: './static/nut_HI.obj', to: './' },
+        { from: './static/nut_LOW.obj', to: './' },
+    ]),
     new ExtractTextPlugin({
         filename: "css/style.css",
     }),
