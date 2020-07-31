@@ -15,10 +15,7 @@ fs.readdirSync('./src/pug').forEach(function(elementName) {
         PugFiles.push(
             new HtmlWebpackPlugin({
                 template: `./src/pug/${ elementName }`,
-                filename: `./${ array[0]}.html`,
-                // minify: {
-                //     collapseWhitespace: false,
-                // },
+                filename: `./${ array[0]}.html`
             })
         )
     }
@@ -104,9 +101,7 @@ module.exports = {
         ],
     }),
     new CopyWebpackPlugin([
-        { from: './static/Textures', to: './Texture' },
-        { from: './static/nut_HI.obj', to: './' },
-        { from: './static/nut_LOW.obj', to: './' },
+        { from: './static/nut_LOW.obj', to: './' }
     ]),
     new ExtractTextPlugin({
         filename: "css/style.css",

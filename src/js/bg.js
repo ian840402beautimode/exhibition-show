@@ -32,8 +32,8 @@ function init() {
   const amount = 3000 // 數量
 
   //* 材質貼圖
-  sideSilver = textureLoader.load('/Textures/bump01.jpg')
-  sideGold = textureLoader.load('/Textures/bump02.jpg')
+  sideSilver = textureLoader.load('../images/textures/silver.jpg')
+  sideGold = textureLoader.load('../images/textures/gold.jpg')
   
   sideSilver.wrapS = THREE.RepeatWrapping;
   sideSilver.wrapT = THREE.RepeatWrapping;
@@ -73,12 +73,6 @@ function init() {
   //* 建立物件
 
   objLoader.load( '/nut_LOW.obj', (obj) => {
-    // obj.traverse((child) => {
-    //   if ( child instanceof THREE.Mesh ) {
-    //     child.material.map = sideGold
-    //   }
-    // })
-
     for (let i = 0; i < amount; i++) {
       const nuts = obj.clone(true)
       
