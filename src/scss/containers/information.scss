@@ -22,6 +22,30 @@
   }
 }
 
+@keyframes infoHexMove3 {
+  0% {
+    transform: translate(-15px, 15px) rotate(28deg);
+  }
+  50% {
+    transform: translate(20px, -20px) rotate(33deg);
+  }
+  100% {
+    transform: translate(-15px, 15px) rotate(28deg);
+  }
+}
+
+@keyframes infoHexMove4 {
+  0% {
+    transform: translate(0, 0) rotate(40deg);
+  }
+  50% {
+    transform: translate(-20px, 20px) rotate(20deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(40deg);
+  }
+}
+
 #information-block {
   .content-wrap {
     .content {
@@ -43,10 +67,10 @@
   .content-bg {
     .bg-hex {
       &:nth-child(1) {
-        animation: infoHexMove1 15s infinite linear;
+        animation: infoHexMove3 15s infinite linear;
       }
       &:nth-child(2) {
-        animation: infoHexMove2 25s infinite linear;
+        animation: infoHexMove4 25s infinite linear;
       }
     }
   }

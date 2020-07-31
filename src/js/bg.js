@@ -9,6 +9,7 @@ let scene, renderer, camera, controls, axes, statsUI
 let pointLight, pointLight2
 let rotateAngle = 0
 let rotateAngle2 = 0
+let cameraAngle = 0
 let cubeArr = []
 let mouseX = 0, mouseY = 0
 let windowHalfX = window.innerWidth / 2
@@ -32,8 +33,8 @@ function init() {
   const amount = 3000 // 數量
 
   //* 材質貼圖
-  sideSilver = textureLoader.load('../images/textures/silver.jpg')
-  sideGold = textureLoader.load('../images/textures/gold.jpg')
+  sideSilver = textureLoader.load('images/textures/silver.jpg')
+  sideGold = textureLoader.load('images/textures/gold.jpg')
   
   sideSilver.wrapS = THREE.RepeatWrapping;
   sideSilver.wrapT = THREE.RepeatWrapping;
@@ -72,7 +73,7 @@ function init() {
 
   //* 建立物件
 
-  objLoader.load( '/nut_LOW.obj', (obj) => {
+  objLoader.load( 'nut_LOW.obj', (obj) => {
     for (let i = 0; i < amount; i++) {
       const nuts = obj.clone(true)
       
@@ -186,21 +187,37 @@ function animate() {
   }
 }
 
+function cameraAnimate() {
+  if (cameraAngle > (2 * Math.PI) - (Math.PI / 180)) {
+    cameraAngle = 0
+  } else {
+    cameraAngle += (Math.PI / 180) / 10
+  }
+
+  camera.position.x = 50 * Math.cos(cameraAngle)
+  camera.position.z = 50 * Math.sin(cameraAngle)
+  // camera.rotation.x = 0
+  // camera.rotation.z = 0
+  // camera.rotation.y += -((Math.PI / 180) / 10)
+}
+
 // 渲染場景
 function render() {
   // console.log(Date.now())
 
-  if (mouseX > 0) {
-    camera.position.x += ( mouseX - camera.position.x ) * 0.00003;
-  } else {
-    camera.position.x += ( mouseX - camera.position.x ) * 0.00001;
-  }
+  // if (mouseX > 0) {
+  //   camera.position.x += ( mouseX - camera.position.x ) * 0.00003;
+  // } else {
+  //   camera.position.x += ( mouseX - camera.position.x ) * 0.00001;
+  // }
 
-	camera.position.y += ( - mouseY - camera.position.y ) * 0.00005;
+  // camera.position.z += ( - mouseY - camera.position.y ) * 0.00005;
+  console.log(camera)
   animate()
   pointLightAnimation()
   statsUI.update()
-  controls.update()
+  cameraAnimate()
+  // controls.update()
   requestAnimationFrame(render)
   renderer.render(scene, camera)
 }
