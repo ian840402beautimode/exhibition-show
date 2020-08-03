@@ -1,3 +1,4 @@
+import './loading'
 import './bg'
 import './exhibition-area'
 import './3d-translate'
@@ -13,7 +14,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 setTimeout(() => {
   $('.main-block').addClass('start')
-}, 1000)
+}, 2000)
 
 // 主選單
 $('#menu-btn').on('click', function (e) {

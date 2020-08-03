@@ -1,11 +1,10 @@
 import * as THREE from "three";
 import { OBJLoader2 } from "three/examples/jsm/loaders/OBJLoader2.js";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Stats from 'stats-js'
 
 const bgDom = document.querySelector('#webGl')
 
-let scene, renderer, camera, controls, axes, statsUI
+let scene, renderer, camera, axes, statsUI
 let objArr = []
 let pointLight, pointLight2
 let lightAngle = 0
@@ -66,12 +65,6 @@ function init() {
 
   //* 控制器 & stats
   statsUI = initStats()
-  // controls = new OrbitControls(camera, renderer.domElement)
-  // controls.enableDamping = true
-  // controls.dampingFactor = 0.25
-  // controls.autoRotate = true
-  // controls.autoRotateSpeed = 0.5
-  // controls.enableZoom = false
 
   //* 建立物件
 
@@ -253,5 +246,6 @@ document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 init()
 setTimeout(() => {
   render()
-}, 1000)
+  $('#webGl').addClass('start')
+}, 3000)
 
