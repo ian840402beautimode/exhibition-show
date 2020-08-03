@@ -24,7 +24,7 @@
   }
 
   .main-menu-block {
-    display: none;
+    display: block;
     height: 100%;
     position: absolute;
     top: 0;
@@ -47,11 +47,17 @@
 
   .content-logo {
     display: none;
-    width: 200px;
+    width: auto;
+    height: 35px;
     position: fixed;
     top: 40px;
     left: 65px;
     z-index: 30;
+
+    img {
+      width: auto;
+      height: 100%;
+    }
 
     @media (max-width: 1440) and (min-width: 1025) {
       width: 150px;

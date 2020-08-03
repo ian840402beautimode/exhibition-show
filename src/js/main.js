@@ -18,11 +18,13 @@ setTimeout(() => {
 
 // 主選單
 $('#menu-btn').on('click', function (e) {
+  $(this).toggleClass('open')
   $('.menu-wrap').toggleClass('open')
   $('.menu-mask').toggleClass('open')
 })
 
 $('.menu-mask').on('click', function (e) {
+  $(this).removeClass('open')
   $('.menu-wrap').removeClass('open')
   $('.menu-mask').removeClass('open')
 })

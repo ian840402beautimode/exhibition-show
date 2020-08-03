@@ -9,7 +9,57 @@
   .menu-btn {
     width: 70px;
     height: 60px;
+    position: relative;
     cursor: pointer;
+
+    &.open {
+      .btn-line-wrap {
+        transform: rotate(540deg);
+        transition: all .8s .2s ease-out;
+        .btn-line {
+          transition: all .2s;
+          &:nth-child(1) {
+            top: 30px;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            top: 30px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    .btn-line-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(0deg);
+      transition: all .8s ease-out;
+
+      .btn-line {
+        width: 38px;
+        height: 2px;
+        background-color: rgba($color: #0c0b04, $alpha: 0.5);
+        position: absolute;
+        transition: all .2s .8s;
+
+        &:nth-child(1) {
+          top: 24px;
+          transform: rotate(0deg);
+        }
+        &:nth-child(2) {
+          top: 36px;
+          transform: rotate(0deg);
+        }
+      }
+    }
 
     @media (max-width: 480px) {
       width: 50px;
