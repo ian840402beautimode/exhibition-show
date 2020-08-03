@@ -11,6 +11,9 @@ let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+setTimeout(() => {
+  $('.main-block').addClass('start')
+}, 1000)
 
 // 主選單
 $('#menu-btn').on('click', function (e) {

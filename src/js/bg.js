@@ -6,11 +6,13 @@ import Stats from 'stats-js'
 const bgDom = document.querySelector('#webGl')
 
 let scene, renderer, camera, controls, axes, statsUI
+let objArr = []
 let pointLight, pointLight2
-let rotateAngle = 0
-let rotateAngle2 = 0
+let lightAngle = 0
+let lightAngle2 = 0
 let cameraAngle = 0
-let cubeArr = []
+let cameraAngleStart = 20
+let cameraPosition = 250
 let mouseX = 0, mouseY = 0
 let windowHalfX = window.innerWidth / 2
 let windowHalfY = window.innerHeight / 2
@@ -59,17 +61,17 @@ function init() {
     0.1,
     10000
   )
-  camera.position.set(10, 10, 10)
+  camera.position.set(100, 0, 100)
   camera.lookAt(scene.position)
 
   //* 控制器 & stats
   statsUI = initStats()
-  controls = new OrbitControls(camera, renderer.domElement)
-  controls.enableDamping = true
-  controls.dampingFactor = 0.25
-  controls.autoRotate = true
-  controls.autoRotateSpeed = 0.5
-  controls.enableZoom = false
+  // controls = new OrbitControls(camera, renderer.domElement)
+  // controls.enableDamping = true
+  // controls.dampingFactor = 0.25
+  // controls.autoRotate = true
+  // controls.autoRotateSpeed = 0.5
+  // controls.enableZoom = false
 
   //* 建立物件
 
@@ -100,7 +102,7 @@ function init() {
       
       scene.add(nuts)
 
-      cubeArr.push(nuts)
+      objArr.push(nuts)
       
     }    
   }, null, null, null );
@@ -153,71 +155,82 @@ function init() {
 
 // 第一光源
 function pointLightAnimation() {
-  if (rotateAngle > 2 * Math.PI) {
-    rotateAngle = 0 // 超過 360 度後歸零
+  if (lightAngle > 2 * Math.PI) {
+    lightAngle = 0 // 超過 360 度後歸零
   } else {
-    rotateAngle += 0.02 // 遞增角度
+    lightAngle += 0.02 // 遞增角度
   }
 
-  if (rotateAngle2 > 2 * Math.PI) {
-    rotateAngle2 = 0 // 超過 360 度後歸零
+  if (lightAngle2 > 2 * Math.PI) {
+    lightAngle2 = 0 // 超過 360 度後歸零
   } else {
-    rotateAngle2 += 0.02
+    lightAngle2 += 0.02
   }
 
   // 光源延橢圓軌道繞 Y 軸旋轉
-  pointLight.position.x = 230 * Math.cos(rotateAngle)
-  pointLight.position.z = 230 * Math.sin(rotateAngle)
+  pointLight.position.x = 230 * Math.cos(lightAngle)
+  pointLight.position.z = 230 * Math.sin(lightAngle)
 
-  pointLight2.position.x = 230 * Math.cos(rotateAngle2)
-  pointLight2.position.z = 230 * Math.sin(rotateAngle2)
+  pointLight2.position.x = 230 * Math.cos(lightAngle2)
+  pointLight2.position.z = 230 * Math.sin(lightAngle2)
 }
 
 
 // 建立動畫
 function animate() {
   // pointLight.color.setHex(0xff0000)
-  for (let i = 0; i < cubeArr.length; i++) {
-    cubeArr[i].rotation.x += 0.01
-    cubeArr[i].rotation.y += 0.01
-    cubeArr[i].rotation.z += 0.01
-    cubeArr[i].position.x += 0.0001
-    cubeArr[i].position.y += 0.0001
-    cubeArr[i].position.z += 0.0001
+  for (let i = 0; i < objArr.length; i++) {
+    objArr[i].rotation.x += 0.01
+    objArr[i].rotation.y += 0.01
+    objArr[i].rotation.z += 0.01
+    objArr[i].position.x += 0.0001
+    objArr[i].position.y += 0.0001
+    objArr[i].position.z += 0.0001
   }
 }
 
 function cameraAnimate() {
+  if (camera.position.x > 50) {
+    cameraPosition -= 1
+  } else {
+    cameraAngleStart = 8
+  }
+
   if (cameraAngle > (2 * Math.PI) - (Math.PI / 180)) {
     cameraAngle = 0
   } else {
-    cameraAngle += (Math.PI / 180) / 10
+    if (camera.position.x > 50) {
+      cameraAngle += (Math.PI / 180) / cameraAngleStart
+    } else {
+      if (mouseX > 0) {
+        cameraAngle += ((Math.PI / 180) / cameraAngleStart) + (mouseX * 0.000001)
+      } else {
+        cameraAngle += ((Math.PI / 180) / cameraAngleStart) + (mouseX * 0.000005)
+      }
+    }
   }
-
-  camera.position.x = 50 * Math.cos(cameraAngle)
-  camera.position.z = 50 * Math.sin(cameraAngle)
-  // camera.rotation.x = 0
-  // camera.rotation.z = 0
-  // camera.rotation.y += -((Math.PI / 180) / 10)
+  
+  camera.position.x = cameraPosition * Math.cos(cameraAngle)
+  camera.position.z = cameraPosition * Math.sin(cameraAngle)
+  camera.lookAt(scene.position)
 }
 
 // 渲染場景
 function render() {
-  // console.log(Date.now())
+  if (mouseY > 0) {
+    if (camera.position.y < 30) {
+      camera.position.y += mouseY * 0.0001
+    }
+  } else {
+    if (camera.position.y > -30) {
+      camera.position.y += mouseY * 0.0001
+    }
+  }
 
-  // if (mouseX > 0) {
-  //   camera.position.x += ( mouseX - camera.position.x ) * 0.00003;
-  // } else {
-  //   camera.position.x += ( mouseX - camera.position.x ) * 0.00001;
-  // }
-
-  // camera.position.z += ( - mouseY - camera.position.y ) * 0.00005;
-  console.log(camera)
   animate()
+  cameraAnimate()
   pointLightAnimation()
   statsUI.update()
-  cameraAnimate()
-  // controls.update()
   requestAnimationFrame(render)
   renderer.render(scene, camera)
 }
@@ -238,4 +251,7 @@ window.addEventListener('resize', function() {
 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 init()
-render()
+setTimeout(() => {
+  render()
+}, 1000)
+

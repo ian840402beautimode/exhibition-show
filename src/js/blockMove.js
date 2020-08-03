@@ -162,9 +162,11 @@ const blockMove = (dest) => {
   if (nowBlock > 0) {
     $('.main-menu-block').fadeIn()
     $('#progress-block').fadeIn()
+    $('.content-logo').fadeIn()  
   } else {
     $('.main-menu-block').fadeOut()
     $('#progress-block').fadeOut()
+    $('.content-logo').fadeOut()
   }
 }
 

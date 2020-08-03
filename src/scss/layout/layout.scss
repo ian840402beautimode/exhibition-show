@@ -39,6 +39,15 @@
     transition: all .5s;
   }
 
+  .content-logo {
+    display: none;
+    width: 200px;
+    position: fixed;
+    top: 40px;
+    left: 65px;
+    z-index: 30;
+  }
+
   .main-content-wrapper {
     position: relative;
     width: 100%;
