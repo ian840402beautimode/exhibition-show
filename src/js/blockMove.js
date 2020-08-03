@@ -132,6 +132,13 @@ const lineMove = (dest) => {
 
 // 區塊移動
 const blockMove = (dest) => {
+  if (dest >= 7) {
+    $('#content-window').css({
+      'transform': `translate(-${hexCoordinate[1].x}px, ${-hexCoordinate[1].y}px)`
+    })
+    lineMove(1)
+    nowBlock = 1
+  }
   if (dest >= 0 && dest <= 6) {
     if (dest > nowBlock) {
       blockNext(dest)
@@ -172,9 +179,32 @@ $('#first-btn').on('click', function (e) {
 // 選單按鈕
 $('.menu-list__items').on('click', function (e) {
   const id = Number($(this).data('id'))
-  blockMove(id)
+  $('#content-window').css({
+    'transform': `translate(-${hexCoordinate[id].x}px, ${-hexCoordinate[id].y}px)`
+  })
+  lineMove(id)
   $('.menu-wrap').removeClass('open')
   $('.menu-mask').removeClass('open')
+})
+
+// 滾輪事件
+document.querySelector('#content-window').addEventListener('wheel', (e) => {
+  const isScrollingDown = Math.sign(e.wheelDeltaY)
+  if (!scrollLoading) {
+    scrollLoading = true
+    if (isScrollingDown < 0) {
+      if (nowBlock >= 0 && nowBlock <= 6) {
+        blockMove(nowBlock + 1)
+      }
+    } else if (isScrollingDown > 0) {
+      if (nowBlock >= 1 && nowBlock <= 6) {
+        blockMove(nowBlock - 1)
+      }
+    }
+    setTimeout(() => {
+      scrollLoading = false
+    }, 500)
+  }
 })
 
 // RWD
@@ -189,26 +219,5 @@ window.addEventListener('resize', function() {
     $('#content-window').css({
       'transform': `translate(-${hexCoordinate[nowBlock].x}px, ${-hexCoordinate[nowBlock].y}px)`
     })
-  }
-})
-
-
-// 滾輪事件
-document.querySelector('#content-window').addEventListener('wheel', (e) => {
-  const isScrollingDown = Math.sign(e.wheelDeltaY)
-  if (!scrollLoading) {
-    scrollLoading = true
-    if (isScrollingDown < 0) {
-      if (nowBlock >= 0 && nowBlock < 6) {
-        blockMove(nowBlock + 1)
-      }
-    } else if (isScrollingDown > 0) {
-      if (nowBlock >= 1 && nowBlock <= 6) {
-        blockMove(nowBlock - 1)
-      }
-    }
-    setTimeout(() => {
-      scrollLoading = false
-    }, 500)
   }
 })

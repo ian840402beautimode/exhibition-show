@@ -18,6 +18,11 @@ $('#menu-btn').on('click', function (e) {
   $('.menu-mask').toggleClass('open')
 })
 
+$('.menu-mask').on('click', function (e) {
+  $('.menu-wrap').removeClass('open')
+  $('.menu-mask').removeClass('open')
+})
+
 // area 區塊按鈕
 $('#area-btn').on('click', function (e) {
   $('#special-area-block').fadeIn()
