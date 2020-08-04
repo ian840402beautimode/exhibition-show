@@ -35,7 +35,10 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, 'static'),
+    // publicPath: '/dist/',
+    // contentBase: path.join(__dirname, '/dist/'),
+    contentBase: './dist',
+    progress: true,
     host: '0.0.0.0',
     port: 8088,
     open: true,
@@ -43,8 +46,8 @@ module.exports = {
   module: {
     rules: [
         {
-            test: /\.(js)$/,
-            exclude: /(node_modules)/,
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: {
