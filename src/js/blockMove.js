@@ -1,6 +1,6 @@
 let windowWidth = window.innerWidth
 let windowHeight = window.innerHeight
-let basicWidth = windowWidth >= 1024 ? windowWidth * 1.5 : windowHeight * 2
+let basicWidth = windowWidth > windowHeight ? windowWidth * 1.5 : windowHeight * 2
 const degree60 = Math.PI / 3
 const offsetY = -windowHeight
 

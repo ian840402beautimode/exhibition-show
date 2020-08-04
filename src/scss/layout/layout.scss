@@ -25,7 +25,6 @@
 
   .main-menu-block {
     display: none;
-    // height: 100%;
     position: absolute;
     top: 0;
     right: 0;
@@ -76,6 +75,21 @@
         width: 100%;
         height: auto;
       }
+    }
+  }
+
+  .mobile-prompt {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    .prompt-img {
+      width: 100px;
+    }
+    .prompt-text {
+      color: #ffffff;
+      font-size: 12px;
     }
   }
 

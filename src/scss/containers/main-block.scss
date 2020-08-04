@@ -46,7 +46,7 @@
     width: 100%;
     height: 100%;
     
-    @media (max-width: 1025px) {
+    @media (max-width: 1024px) {
       align-items: flex-start;
       padding: 150px 0px;
       box-sizing: border-box;
@@ -61,6 +61,10 @@
       &__title {
         max-width: 860px;
         width: 100%;
+
+        @media (max-width: 1024px) {
+          max-width: 700px;
+        }
       }
       &__btn {
         position: absolute;
@@ -68,8 +72,13 @@
         right: -125px;
 
         @media (max-width: 1025px) {
-          bottom: -300px;
-          right: -30px;
+          bottom: -250px;
+          right: -100px;
+        }
+
+        @media (max-width: 768px) {
+          bottom: -290px;
+          right: -40px;
         }
 
         @media (max-width: 480px) {
@@ -99,7 +108,7 @@
           .icon {
             margin-top: 15px;
 
-            @media (max-width: 481px) {
+            @media (max-width: 1024px) {
               display: none;
             }
             .mouse-scroll {
@@ -154,7 +163,14 @@
           transition: opacity .5s 3s;
           animation: mainHexMove1 10s infinite linear;
 
-          @media (max-width: 481px) {
+          @media (max-width: 1024px) {
+            width: 312px;
+            height: 360px;
+            margin-left: -166px;
+            margin-top: -180px;
+          }
+
+          @media (max-width: 480px) {
             width: 208px;
             height: 240px;
             margin-left: -114px;
@@ -172,7 +188,14 @@
           transition: opacity .5s 3.3s;
           transform: rotate(-5deg);
 
-          @media (max-width: 481px) {
+          @media (max-width: 1024px) {
+            width: 520px;
+            height: 600px;
+            margin-left: -260px;
+            margin-top: -300px;
+          }
+
+          @media (max-width: 480px) {
             width: 312px;
             height: 360px;
             margin-left: -156px;
@@ -190,7 +213,14 @@
           transition: opacity .5s 3.6s;
           animation: mainHexMove3 14s infinite linear;
 
-          @media (max-width: 481px) {
+          @media (max-width: 1024px) {
+            width: 832px;
+            height: 960px;
+            margin-left: -416px;
+            margin-top: -480px;
+          }
+
+          @media (max-width: 480px) {
             width: 416px;
             height: 480px;
             margin-left: -208px;
@@ -208,7 +238,14 @@
           transform: rotate(-5deg);
           transition: opacity .5s 3.9s;
 
-          @media (max-width: 481px) {
+          @media (max-width: 1024px) {
+            width: 1260px;
+            height: 1452px;
+            margin-left: -630px;
+            margin-top: -726px;
+          }
+
+          @media (max-width: 480px) {
             width: 582px;
             height: 672px;
             margin-left: -261px;
@@ -226,7 +263,14 @@
           animation: mainHexMove5 18s infinite linear;
           transition: opacity .5s 4.2s;
 
-          @media (max-width: 481px) {
+          @media (max-width: 1024px) {
+            width: 1352px;
+            height: 1560px;
+            margin-left: -676px;
+            margin-top: -780px;
+          }
+
+          @media (max-width: 480px) {
             width: 624px;
             height: 720px;
             margin-left: -312px;
@@ -244,7 +288,7 @@
           animation: mainHexMove6 14s infinite linear;
           transition: opacity .5s 4.5s;
 
-          @media (max-width: 768px) {
+          @media (max-width: 1024px) {
             display: none;
           }
         }
