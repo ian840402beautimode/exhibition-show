@@ -188,6 +188,7 @@ $('.menu-list__items').on('click', function (e) {
   lineMove(id)
   $('.menu-wrap').removeClass('open')
   $('.menu-mask').removeClass('open')
+  $('#menu-btn').removeClass('open')
 })
 
 // 滾輪事件
