@@ -7,6 +7,9 @@ const offsetY = -windowHeight
 let hexCoordinate = []
 let nowBlock = 0
 let scrollLoading = false
+let touchStart = 0
+let touchEnd = 0
+let distance = 0
 
 
 
@@ -208,6 +211,33 @@ document.querySelector('#content-window').addEventListener('wheel', (e) => {
     }, 500)
   }
 })
+
+// Touch 事件
+
+document.querySelector('#content-window').addEventListener('touchstart', (e) => {
+  touchStart = e.changedTouches[0].pageX
+  touchEnd = 0
+  distance = 0
+})
+
+document.querySelector('#content-window').addEventListener('touchend', (e) => {
+  if (distance >= 50) {
+    blockMove(nowBlock + 1)
+  } else if (distance <= -50) {
+    blockMove(nowBlock - 1)
+  } else {
+    $('#content-window').css({
+      'transform': `translate(-${hexCoordinate[nowBlock].x}px, ${-hexCoordinate[nowBlock].y}px)`
+    })
+  }
+})
+
+document.querySelector('#content-window').addEventListener('touchmove', (e) => {
+  touchEnd = e.changedTouches[0].pageX
+  distance = touchStart - touchEnd
+})
+
+
 
 // RWD
 window.addEventListener('resize', function() {

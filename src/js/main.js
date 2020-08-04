@@ -24,7 +24,7 @@ $('#menu-btn').on('click', function (e) {
 })
 
 $('.menu-mask').on('click', function (e) {
-  $(this).removeClass('open')
+  $('#menu-btn').removeClass('open')
   $('.menu-wrap').removeClass('open')
   $('.menu-mask').removeClass('open')
 })
