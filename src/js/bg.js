@@ -244,8 +244,9 @@ window.addEventListener('resize', function() {
 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 init()
+
+// Loading
 setTimeout(() => {
   render()
   $('#webGl').addClass('start')
 }, 3000)
-

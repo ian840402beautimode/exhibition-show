@@ -11,8 +11,6 @@ let touchStart = 0
 let touchEnd = 0
 let distance = 0
 
-
-
 // 取得六邊型區塊座標與定位
 const getHexCoordinate = () => {
   const startPosition = {
