@@ -1,5 +1,6 @@
 .exhibition-area-block {
   position: relative;
+  height: 100%;
   #area-close-btn {
     display: flex;
     justify-content: center;
@@ -13,6 +14,11 @@
     cursor: pointer;
     transform: rotate(0deg);
     transition: all .8s ease-out;
+
+    @media (max-width: 700px) {
+      top: 15px;
+      right: 15px;
+    }
 
     &:hover {
       transform: rotate(540deg);
@@ -28,7 +34,7 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     @media (max-width: 1024px) {
       flex-wrap: wrap;
@@ -52,6 +58,14 @@
         height: 20%;
         border-right: unset;
         border-bottom: 5px solid #d6b05d;
+      }
+
+      @media (max-width: 768px) {
+        border-bottom: 3px solid #d6b05d;
+      }
+
+      @media (max-width: 480px) {
+        border-bottom: 2px solid #d6b05d;
       }
   
       &:last-child {
@@ -106,6 +120,14 @@
             align-items: flex-start;
             padding: 40px 80px;
           }
+
+          @media (max-width: 768px) {
+            padding: 20px 40px;
+          }
+
+          @media (max-width: 480px) {
+            padding: 10px 30px;
+          }
           
           .title {
             position: absolute;
@@ -118,6 +140,11 @@
             @media (max-width: 1024px) {
               font-size: 40px;
               position: unset;
+            }
+
+            @media (max-width: 480px) {
+              font-size: 32px;
+              margin-bottom: 10px;
             }
           }
   
@@ -135,6 +162,10 @@
               text-align: left;
               max-width: 100%;
               font-size: 20px;
+            }
+            
+            @media (max-width: 480px) {
+              font-size: 12px;
             }
           }
         }
@@ -168,6 +199,25 @@
               -webkit-filter: unset;
               top: unset;
               bottom: 0;
+            }
+
+            @media (max-width: 480px) {
+              bottom: -30px;
+            }
+          }
+
+          .pc-img {
+            display: block;
+
+            @media (max-width: 480px) {
+              display: none;
+            }
+          }
+          .mobile-img {
+            display: none;
+
+            @media (max-width: 480px) {
+              display: block;
             }
           }
         }

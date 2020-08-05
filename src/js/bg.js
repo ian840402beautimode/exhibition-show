@@ -235,6 +235,15 @@ function onDocumentMouseMove( event ) {
 }
 
 // 監聽螢幕寬高來做簡單 RWD 設定
+
+// Loading
+setTimeout(() => {
+  render()
+  $('#webGl').addClass('start')
+}, 3000)
+
+init()
+
 window.addEventListener('resize', function() {
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
@@ -242,11 +251,3 @@ window.addEventListener('resize', function() {
 })
 
 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-
-init()
-
-// Loading
-setTimeout(() => {
-  render()
-  $('#webGl').addClass('start')
-}, 3000)

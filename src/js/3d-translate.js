@@ -1,5 +1,3 @@
-document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-
 const rotateDegree = 10
 const offsetDistance = 50
 const windowHalfX = window.innerWidth / 2
@@ -10,7 +8,7 @@ const mouseOffsetX = windowHalfX / offsetDistance
 const mouseOffsetY = windowHalfY / (offsetDistance / 2 )
 
 // 滑鼠移動事件
-function onDocumentMouseMove( event ) {
+export const onDocumentMouseMove = (event) =>{
   const mouseX = event.clientX - windowHalfX
   const mouseY = event.clientY - windowHalfY
   const offsetX = mouseX / mouseOffsetX

@@ -255,5 +255,9 @@
       opacity: 1;
       pointer-events: unset;
     }
+
+    @media (max-width: 480px) {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
   }
 }

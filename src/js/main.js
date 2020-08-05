@@ -1,8 +1,8 @@
-import './loading'
 import './bg'
-import './exhibition-area'
-import './3d-translate'
 import './blockMove'
+import { areaBlockEvent } from './exhibition-area'
+import { loadingEvent } from './loading'
+import { onDocumentMouseMove } from './3d-translate'
 
 const requireContext = require.context("../images", true, /^\.\/.*\.png$|^\.\/.*\.jp?g$|/);
 requireContext.keys().map(requireContext);
@@ -12,10 +12,18 @@ let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+// Loading
 setTimeout(() => {
   $('.main-block').addClass('show')
   $('#mobile-prompt').addClass('show')
 }, 2000)
+
+setTimeout(() => {
+  $('#webGl').addClass('start')
+}, 3000)
+
+loadingEvent()
+areaBlockEvent()
 
 // 主選單
 $('#menu-btn').on('click', function (e) {
@@ -62,3 +70,5 @@ $('#event-close-btn').on('click', function (e) {
     'opacity': 0.4
   })
 })
+
+document.addEventListener( 'mousemove', onDocumentMouseMove, false );

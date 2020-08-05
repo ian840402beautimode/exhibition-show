@@ -187,6 +187,7 @@ $('.menu-list__items').on('click', function (e) {
     'transform': `translate(-${hexCoordinate[id].x}px, ${-hexCoordinate[id].y}px)`
   })
   lineMove(id)
+  nowBlock = id
   $('.menu-wrap').removeClass('open')
   $('.menu-mask').removeClass('open')
   $('#menu-btn').removeClass('open')
