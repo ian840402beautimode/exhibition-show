@@ -163,7 +163,8 @@ const blockMove = (dest) => {
   if (nowBlock > 0) {
     $('.main-menu-block').fadeIn()
     $('#progress-block').fadeIn()
-    $('.content-logo').fadeIn()  
+    $('.content-logo').fadeIn()
+    $('#mobile-prompt').removeClass('show')
   } else {
     $('.main-menu-block').fadeOut()
     $('#progress-block').fadeOut()

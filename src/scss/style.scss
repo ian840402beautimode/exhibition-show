@@ -7,10 +7,10 @@
 @import "./layout/layout.scss";
 
 //components
-@import './components/loading.scss';
-@import "./components/menu.scss";
-@import './components/content-block.scss';
-@import './components/progress.scss';
+@import './components/loading-block.scss';
+@import "./components/menu-block.scss";
+@import './components/progress-block.scss';
+@import './components/prompt-block.scss';
 
 //containers
 @import "./containers/containers.scss";

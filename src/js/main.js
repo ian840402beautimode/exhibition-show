@@ -13,7 +13,8 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 setTimeout(() => {
-  $('.main-block').addClass('start')
+  $('.main-block').addClass('show')
+  $('#mobile-prompt').addClass('show')
 }, 2000)
 
 // 主選單

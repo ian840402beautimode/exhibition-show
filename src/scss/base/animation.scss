@@ -1,3 +1,13 @@
+// Loading 畫面動畫
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(4turn);
+  }
+}
+
 // 主畫面滑鼠滾輪動畫
 @keyframes mouseScroll {
   0% {

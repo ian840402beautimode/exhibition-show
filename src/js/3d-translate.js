@@ -18,7 +18,9 @@ function onDocumentMouseMove( event ) {
   const degreeX = mouseX / mouseDegreeX
   const degreeY = mouseY / mouseDegreeY
 
-  $('#main-title').css({
-    'transform': `perspective(1000px) rotateY(${degreeX}deg) rotateX(${-degreeY}deg) translate(${offsetX}px, ${-offsetY}px)`
-  })
+  if (windowHalfX * 2 > 1024) {
+    $('#main-title').css({
+      'transform': `perspective(1000px) rotateY(${degreeX}deg) rotateX(${-degreeY}deg) translate(${offsetX}px, ${-offsetY}px)`
+    })
+  }
 }
