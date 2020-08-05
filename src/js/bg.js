@@ -31,7 +31,7 @@ const textureLoader = new THREE.TextureLoader();
 // 初始化場景、渲染器、相機、物體
 function init() {
 
-  const amount = 3000 // 數量
+  const amount = 1700 // 數量
 
   //* 材質貼圖
   sideSilver = textureLoader.load('images/textures/silver.jpg')
@@ -72,9 +72,9 @@ function init() {
     for (let i = 0; i < amount; i++) {
       const nuts = obj.clone(true)
       
-      const x = Math.random() * 250 - 125;
-      const y = Math.random() * 250 - 125;
-      const z = Math.random() * 250 - 125;
+      const x = Math.random() * 220 - 110;
+      const y = Math.random() * 220 - 110;
+      const z = Math.random() * 220 - 110;
       
       
       nuts.position.set(x, y, z)
