@@ -36,10 +36,6 @@ function init() {
   //* 材質貼圖
   sideSilver = textureLoader.load('images/textures/silver.jpg')
   sideGold = textureLoader.load('images/textures/gold.jpg')
-  
-  sideSilver.wrapS = THREE.RepeatWrapping;
-  sideSilver.wrapT = THREE.RepeatWrapping;
-  sideSilver.repeat.set( 2, 1 );
 
   //* 建立場景
   scene = new THREE.Scene()
@@ -149,13 +145,13 @@ function init() {
 // 第一光源
 function pointLightAnimation() {
   if (lightAngle > 2 * Math.PI) {
-    lightAngle = 0 // 超過 360 度後歸零
+    lightAngle = 0
   } else {
-    lightAngle += 0.02 // 遞增角度
+    lightAngle += 0.02
   }
 
   if (lightAngle2 > 2 * Math.PI) {
-    lightAngle2 = 0 // 超過 360 度後歸零
+    lightAngle2 = 0
   } else {
     lightAngle2 += 0.02
   }
@@ -168,10 +164,8 @@ function pointLightAnimation() {
   pointLight2.position.z = 230 * Math.sin(lightAngle2)
 }
 
-
 // 建立動畫
 function animate() {
-  // pointLight.color.setHex(0xff0000)
   for (let i = 0; i < objArr.length; i++) {
     objArr[i].rotation.x += 0.01
     objArr[i].rotation.y += 0.01
@@ -202,14 +196,7 @@ function cameraAnimate() {
       }
     }
   }
-  
-  camera.position.x = cameraPosition * Math.cos(cameraAngle)
-  camera.position.z = cameraPosition * Math.sin(cameraAngle)
-  camera.lookAt(scene.position)
-}
 
-// 渲染場景
-function render() {
   if (mouseY > 0) {
     if (camera.position.y < 30) {
       camera.position.y += mouseY * 0.0001
@@ -219,7 +206,14 @@ function render() {
       camera.position.y += mouseY * 0.0001
     }
   }
+  
+  camera.position.x = cameraPosition * Math.cos(cameraAngle)
+  camera.position.z = cameraPosition * Math.sin(cameraAngle)
+  camera.lookAt(scene.position)
+}
 
+// 渲染場景
+function render() {
   animate()
   cameraAnimate()
   pointLightAnimation()

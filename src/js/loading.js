@@ -1,12 +1,12 @@
 export const loadingEvent = () => {
   let counter = 0;
 
-  const i = setInterval(function(){
+  const loading = setInterval(function(){
     $("#loading-block .run-hex-text").html(counter + "%");
     counter++;
       
     if(counter == 101) {
-      clearInterval(i);
+      clearInterval(loading);
       $("#loading-block").fadeOut()
     }
   }, 20);

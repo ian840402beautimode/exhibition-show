@@ -1,6 +1,5 @@
 import './bg'
 import './blockMove'
-import { areaBlockEvent } from './exhibition-area'
 import { loadingEvent } from './loading'
 import { onDocumentMouseMove } from './3d-translate'
 
@@ -13,6 +12,8 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // Loading
+loadingEvent()
+
 setTimeout(() => {
   $('.main-block').addClass('show')
   $('#mobile-prompt').addClass('show')
@@ -21,9 +22,6 @@ setTimeout(() => {
 setTimeout(() => {
   $('#webGl').addClass('start')
 }, 3000)
-
-loadingEvent()
-areaBlockEvent()
 
 // 主選單
 $('#menu-btn').on('click', function (e) {
