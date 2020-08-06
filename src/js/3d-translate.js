@@ -8,17 +8,22 @@ const mouseOffsetX = windowHalfX / offsetDistance
 const mouseOffsetY = windowHalfY / (offsetDistance / 2 )
 
 // 滑鼠移動事件
-export const onDocumentMouseMove = (event) =>{
-  const mouseX = event.clientX - windowHalfX
-  const mouseY = event.clientY - windowHalfY
-  const offsetX = mouseX / mouseOffsetX
-  const offsetY = mouseY / mouseOffsetY
-  const degreeX = mouseX / mouseDegreeX
-  const degreeY = mouseY / mouseDegreeY
 
-  if (windowHalfX * 2 > 1024) {
-    $('#main-title').css({
-      'transform': `perspective(1000px) rotateY(${degreeX}deg) rotateX(${-degreeY}deg) translate(${offsetX}px, ${-offsetY}px)`
-    })
+export const translate3D = (domClass) => {
+  const onDocumentMouseMove = (event) =>{
+    const mouseX = event.clientX - windowHalfX
+    const mouseY = event.clientY - windowHalfY
+    const offsetX = mouseX / mouseOffsetX
+    const offsetY = mouseY / mouseOffsetY
+    const degreeX = mouseX / mouseDegreeX
+    const degreeY = mouseY / mouseDegreeY
+  
+    if (windowHalfX * 2 > 1024) {
+      $(domClass).css({
+        'transform': `perspective(1000px) rotateY(${degreeX}deg) rotateX(${-degreeY}deg) translate(${offsetX}px, ${-offsetY}px)`
+      })
+    }
   }
+  
+  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 }

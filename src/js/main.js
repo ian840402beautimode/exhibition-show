@@ -1,7 +1,7 @@
 import './bg'
 import './blockMove'
 import { loadingEvent } from './loading'
-import { onDocumentMouseMove } from './3d-translate'
+import { translate3D } from './3d-translate'
 
 const requireContext = require.context("../images", true, /^\.\/.*\.png$|^\.\/.*\.jp?g$|/);
 requireContext.keys().map(requireContext);
@@ -22,6 +22,8 @@ setTimeout(() => {
 setTimeout(() => {
   $('#webGl').addClass('start')
 }, 3000)
+
+translate3D('#main-title')
 
 // 主選單
 $('#menu-btn').on('click', function (e) {
@@ -68,5 +70,3 @@ $('#event-close-btn').on('click', function (e) {
     'opacity': 0.4
   })
 })
-
-document.addEventListener( 'mousemove', onDocumentMouseMove, false );
