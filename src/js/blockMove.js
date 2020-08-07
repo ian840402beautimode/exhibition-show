@@ -131,15 +131,21 @@ const lineMove = (dest) => {
   }
 }
 
+const progress = () => {
+  $('#progress-block').find('.progress-now').text('0' + nowBlock)
+  $('#progress-block').find('.line-item').css({
+    'width': `${(100 / 6) * nowBlock}%`
+  })
+
+  if (nowBlock === 6) {
+    $('#progress-block').find('.progress-end').addClass('all')
+  } else {
+    $('#progress-block').find('.progress-end').removeClass('all')
+  }
+}
+
 // 區塊移動
 const blockMove = (dest) => {
-  if (dest >= 7) {
-    $('#content-window').css({
-      'transform': `translate(-${hexCoordinate[1].x}px, ${-hexCoordinate[1].y}px)`
-    })
-    lineMove(1)
-    nowBlock = 1
-  }
   if (dest >= 0 && dest <= 6) {
     if (dest > nowBlock) {
       blockNext(dest)
@@ -147,19 +153,17 @@ const blockMove = (dest) => {
       blockPrev(dest)
     }
 
-    nowBlock = dest
-
-    $('#progress-block').find('.progress-now').text('0' + nowBlock)
-    $('#progress-block').find('.line-item').css({
-      'width': `${(100 / 6) * nowBlock}%`
+    nowBlock = dest    
+  } else if (dest >= 7) {
+    $('#content-window').css({
+      'transform': `translate(-${hexCoordinate[1].x}px, ${-hexCoordinate[1].y}px)`
     })
-
-    if (nowBlock === 6) {
-      $('#progress-block').find('.progress-end').addClass('all')
-    } else {
-      $('#progress-block').find('.progress-end').removeClass('all')
-    }
+    lineMove(1)
+    nowBlock = 1
   }
+
+  progress()
+
   if (nowBlock > 0) {
     $('.main-menu-block').fadeIn()
     $('#progress-block').fadeIn()
@@ -188,6 +192,7 @@ $('.menu-list__items').on('click', function (e) {
   })
   lineMove(id)
   nowBlock = id
+  progress()
   $('.menu-wrap').removeClass('open')
   $('.menu-mask').removeClass('open')
   $('#menu-btn').removeClass('open')

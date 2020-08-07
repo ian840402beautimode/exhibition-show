@@ -5,13 +5,7 @@
         animation: contentHexMove2 25s infinite linear;
       }
       &__text {
-        padding-top: 55px;
-        padding-left: 115px;
         animation: contentHexMove1 15s infinite linear;
-        @media (max-width: 1440px) {
-          padding-top: unset;
-          padding-left: unset;
-        }
       }
       &__btn {
         .btn-link {
