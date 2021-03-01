@@ -41,7 +41,7 @@
     "dependencies": {
         "image-webpack-loader": "^6.0.0",
         "stats-js": "^1.0.1",
-        "three": "^0.118.3",
+        "three": "^0.125.0",
         "webpack-livereload-plugin": "^2.3.0"
     }
 }
